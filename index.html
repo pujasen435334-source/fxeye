@@ -1,0 +1,1086 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Trading & Content Creation Masterclass — fxeye</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+:root {
+  --ink:#0A0A0A;--ink-2:#1A1A1A;--ink-3:#333333;--muted:#6B7280;--muted-lt:#9CA3AF;
+  --border:#E5E7EB;--surface:#F7F7F7;--white:#FFFFFF;--orange:#F26419;--orange-lt:#FEF0E7;
+  --orange-dk:#D4540E;--red:#E63946;--red-lt:#FDE8EA;--purple:#6D28D9;--purple-lt:#EDE9FE;
+  --green:#16A34A;--green-lt:#DCFCE7;--r4:4px;--r8:8px;--r12:12px;--r16:16px;
+  --fn:'Inter',system-ui,sans-serif;--fm:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--ink);font-family:var(--fn);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px;padding-bottom:80px;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-sm{max-width:720px;margin:0 auto;padding:0 20px;}
+section{padding:72px 0;}
+.alt{background:var(--surface);}
+.tc{text-align:center;}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--purple-lt);border:1px solid rgba(242,100,25,.25);padding:4px 11px;border-radius:3px;margin-bottom:18px;}
+h1{font-size:clamp(28px,5.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-0.035em;color:var(--ink);}
+h2{font-size:clamp(22px,3.5vw,42px);font-weight:800;line-height:1.08;letter-spacing:-0.028em;}
+h3{font-size:clamp(17px,2vw,24px);font-weight:700;line-height:1.2;letter-spacing:-0.018em;}
+h4{font-size:14px;font-weight:700;}
+.lead{font-size:16px;color:var(--muted);line-height:1.8;}
+.hi{color:var(--purple);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--fn);font-weight:700;font-size:15px;padding:15px 28px;border-radius:var(--r4);border:2px solid transparent;cursor:pointer;transition:all .18s;letter-spacing:-.01em;white-space:nowrap;}
+.btn-dark{background:var(--ink);color:var(--white);border-color:var(--ink);}
+.btn-dark:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--border);font-size:14px;padding:13px 22px;}
+.btn-ghost:hover{border-color:var(--ink);}
+.btn-cta{background:var(--purple);color:var(--white);border-color:var(--purple);font-size:17px;font-weight:800;padding:18px 36px;width:100%;}
+.btn-cta:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-2px);}
+.btn-cta-sm{background:var(--purple);color:var(--white);border-color:var(--purple);font-size:15px;font-weight:700;padding:14px 24px;}
+.nav .btn-dark{font-size:12px;padding:8px 16px;gap:6px;}
+.ann{background:var(--purple);color:var(--white);text-align:center;padding:9px 16px;font-size:12px;font-weight:500;line-height:1.5;}
+.ann .chip{font-family:var(--fm);background:var(--purple);padding:2px 9px;border-radius:3px;margin-left:6px;font-size:12px;font-weight:600;display:inline-block;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-price{font-family:var(--fm);font-size:12px;color:var(--muted);display:none;}
+.nav-price strong{color:var(--ink);font-size:15px;}
+
+/* ── NAV LOGO ── */
+.nav-logo{height:42px;width:auto;display:block;object-fit:contain;}
+
+@media(min-width:480px){.nav-price{display:block;}}
+#hero{padding:56px 0 60px;border-bottom:1px solid var(--border);}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:52px;align-items:center;}
+.live-pill{display:inline-flex;align-items:center;gap:7px;background:var(--green-lt);border:1px solid #86EFAC;padding:5px 12px;border-radius:3px;margin-bottom:20px;}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.live-pill span{font-size:11px;font-weight:700;color:#15803D;font-family:var(--fm);letter-spacing:.08em;}
+h1{margin-bottom:16px;}
+.hero-sub{font-size:16px;color:var(--muted);max-width:480px;margin-bottom:32px;line-height:1.75;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+.stats{display:flex;gap:24px;padding-top:28px;border-top:1px solid var(--border);flex-wrap:wrap;}
+.stat .n{font-size:28px;font-weight:900;display:block;letter-spacing:-0.04em;line-height:1;margin-bottom:3px;}
+.stat .l{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:var(--fm);}
+.hero-video-col{position:relative;}
+.hero-video-wrap{width:100%;aspect-ratio:16/9;border-radius:var(--r16);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.12);background:#000;}
+.hero-video-wrap iframe{width:100%;height:100%;display:block;border:none;}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:52px;align-items:start;}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r16);border:1px solid var(--border);}
+.about-body h2{margin-bottom:14px;}
+.about-body p{color:var(--muted);margin-bottom:12px;font-size:15px;}
+.check-list{list-style:none;margin:20px 0;}
+.check-list li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;}
+.check-list li:last-child{border-bottom:none;}
+.check-list li i{color:var(--purple);width:14px;margin-top:2px;font-size:12px;flex-shrink:0;}
+.cur-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;}
+.mod{border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;}
+.mod-head{padding:20px 24px;border-bottom:1px solid var(--border);background:var(--surface);}
+.mod-head .ml{font-family:var(--fm);font-size:10px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:6px;}
+.mod-list{list-style:none;}
+.mod-list li{display:flex;align-items:center;gap:10px;padding:11px 24px;border-bottom:1px solid var(--border);font-size:13px;}
+.mod-list li:last-child{border-bottom:none;}
+.mod-list li i{color:var(--purple);font-size:9px;width:10px;flex-shrink:0;}
+#bonus{background:#1A0A2E;color:var(--white);}
+#bonus .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#C4B5FD;}
+#bonus h2{color:var(--white);}
+.bonus-card{border:1px solid rgba(255,255,255,.12);border-radius:var(--r16);padding:44px 36px;margin-top:40px;background:rgba(255,255,255,.04);text-align:center;position:relative;overflow:hidden;}
+.bonus-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);}
+.bonus-card h3{color:var(--white);margin-bottom:12px;}
+.bonus-card p{color:rgba(255,255,255,.6);font-size:15px;max-width:520px;margin:0 auto;line-height:1.75;}
+.bonus-tag{display:inline-block;margin-top:24px;font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:var(--purple);text-transform:uppercase;border:1px solid rgba(242,100,25,.5);padding:5px 16px;border-radius:30px;font-weight:600;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;margin-top:48px;}
+.feat{background:var(--white);padding:24px 20px;transition:background .18s;}
+.feat:hover{background:var(--purple-lt);}
+.feat-ico{width:36px;height:36px;border-radius:6px;background:var(--purple-lt);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:12px;}
+.feat h4{margin-bottom:4px;font-size:13px;}
+.feat p{font-size:12px;color:var(--muted);line-height:1.6;}
+.testimonials-section{padding:36px 0 32px;overflow:hidden;}
+.section-header{text-align:center;padding:0 20px;margin-bottom:22px;overflow:hidden;}
+.marquee-outer{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);mask:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);}
+.marquee-inner{display:flex;gap:14px;width:max-content;animation:slideX 15s linear infinite;}
+.marquee-inner:hover{animation-play-state:paused;}
+@keyframes slideX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tcard{width:200px;height:400px;border-radius:14px;overflow:hidden;flex-shrink:0;position:relative;cursor:pointer;}
+.tcard img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;display:block;}
+.tcard:hover img{transform:scale(1.07);}
+.tcard::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 60%);}
+.cmp-wrap{margin-top:48px;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;min-width:480px;}
+thead th{padding:12px 18px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--surface);border-bottom:1px solid var(--border);font-family:var(--fm);}
+thead th:nth-child(2){color:var(--red);}
+thead th:nth-child(3){color:var(--green);}
+tbody tr{border-bottom:1px solid var(--border);}
+tbody tr:last-child{border-bottom:none;}
+tbody td{padding:11px 18px;font-size:13px;}
+tbody td:first-child{font-weight:600;}
+tbody td:nth-child(2){color:var(--muted);}
+tbody tr:hover td{background:var(--surface);}
+.xc{color:var(--red)!important;font-weight:400!important;}
+.oc{color:var(--green)!important;font-weight:600!important;}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px;}
+.who-card{padding:20px;border:1.5px solid var(--border);border-radius:var(--r8);transition:border-color .18s,box-shadow .18s;}
+.who-card:hover{border-color:var(--purple);box-shadow:0 4px 20px rgba(109,40,217,.1);}
+.who-ico{font-size:20px;color:var(--purple);margin-bottom:10px;}
+.who-card h4{margin-bottom:4px;}
+.who-card p{font-size:12px;color:var(--muted);}
+#pricing{background:var(--surface);}
+.price-card{max-width:520px;margin:48px auto 0;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.1);}
+.price-head{padding:28px 32px 22px;border-bottom:1px solid var(--border);}
+.price-row{display:flex;align-items:flex-end;gap:10px;margin-bottom:6px;justify-content:center;}
+.price-now{font-size:48px;font-weight:900;letter-spacing:-0.05em;line-height:1;}
+.save-tag{font-family:var(--fm);font-size:11px;color:var(--green);font-weight:700;}
+.price-body{padding:22px 32px 28px;}
+.inc-list{list-style:none;margin-bottom:22px;}
+.inc-list li{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.inc-list li:last-child{border-bottom:none;}
+.inc-list li i{color:var(--green);font-size:11px;flex-shrink:0;}
+.secure{margin-top:12px;text-align:center;font-size:10px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:5px;font-family:var(--fm);}
+.value-breakdown{max-width:560px;margin:36px auto 0;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.value-breakdown-head{padding:20px 24px;border-bottom:1px solid var(--border);background:var(--surface);text-align:center;}
+.value-breakdown-head h3{font-size:16px;font-weight:700;color:var(--ink);}
+.value-breakdown-list{list-style:none;padding:16px 24px;}
+.value-breakdown-list li{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--border);font-size:14px;}
+.value-breakdown-list li:last-child{border-bottom:none;}
+.value-breakdown-list li .val-label{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink);}
+.value-breakdown-list li .val-label i{color:var(--purple);font-size:13px;width:18px;}
+.value-breakdown-list li .val-amount{font-family:var(--fm);font-weight:600;color:var(--muted);font-size:13px;}
+.value-breakdown-list li.val-total{padding-top:14px;margin-top:4px;border-top:2px solid var(--border);border-bottom:none;}
+.value-breakdown-list li.val-total .val-label{font-size:15px;font-weight:800;}
+.value-breakdown-list li.val-total .val-amount{font-size:15px;font-weight:900;color:var(--red);text-decoration:line-through;}
+.value-breakdown-footer{padding:16px 24px 20px;text-align:center;border-top:1px solid var(--border);background:var(--purple-lt);}
+.ai-bot-highlight{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.06em;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;max-width:720px;margin-left:auto;margin-right:auto;}
+.benefit-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 20px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r12);transition:border-color .2s,box-shadow .2s,transform .2s;}
+.benefit-card:hover{border-color:var(--purple);box-shadow:0 8px 28px rgba(109,40,217,.12);transform:translateY(-3px);}
+.benefit-ico{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;}
+.benefit-ico.purple{background:var(--purple-lt);color:var(--purple);}
+.benefit-ico.green{background:var(--green-lt);color:var(--green);}
+.benefit-ico.orange{background:var(--orange-lt);color:var(--orange-dk);}
+.benefit-card h4{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--ink);}
+.benefit-card p{font-size:12px;color:var(--muted);line-height:1.6;}
+.cta-buttons-row{display:flex;justify-content:center;gap:12px;margin-top:40px;flex-wrap:wrap;}
+.btn-tradingview{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1E222D;color:var(--white);font-family:var(--fn);font-weight:700;font-size:13px;padding:13px 22px;border-radius:var(--r4);border:2px solid #1E222D;cursor:pointer;transition:all .18s;text-decoration:none;}
+.btn-tradingview:hover{background:#2A2F3C;border-color:#2A2F3C;transform:translateY(-1px);}
+.btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:var(--white);font-family:var(--fn);font-weight:700;font-size:13px;padding:13px 22px;border-radius:var(--r4);border:2px solid #25D366;cursor:pointer;transition:all .18s;text-decoration:none;}
+.btn-whatsapp:hover{background:#128C7E;border-color:#128C7E;transform:translateY(-1px);}
+.btn-telegram{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#0088CC;color:var(--white);font-family:var(--fn);font-weight:700;font-size:13px;padding:13px 22px;border-radius:var(--r4);border:2px solid #0088CC;cursor:pointer;transition:all .18s;text-decoration:none;}
+.btn-telegram:hover{background:#006699;border-color:#006699;transform:translateY(-1px);}
+.faq-wrap{max-width:680px;margin:48px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-btn{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0;text-align:left;cursor:pointer;font-family:var(--fn);font-size:14px;font-weight:600;color:var(--ink);}
+.faq-ico{width:22px;height:22px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;transition:all .18s;}
+.faq-item.open .faq-ico{background:var(--purple);border-color:var(--purple);color:var(--white);}
+.faq-ans{display:none;padding-bottom:16px;font-size:13px;color:var(--muted);line-height:1.8;}
+.faq-item.open .faq-ans{display:block;}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.trust-item{padding:18px 20px;border:1.5px solid var(--border);border-radius:var(--r8);}
+footer{border-top:1px solid var(--border);padding:48px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+.footer-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+.fc-title{font-family:var(--fm);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:14px;font-weight:600;}
+.fc-links{list-style:none;}
+.fc-links li{margin-bottom:8px;}
+.fc-links a{font-size:13px;color:var(--ink-3);transition:color .18s;}
+.fc-links a:hover{color:var(--purple);}
+.foot-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);font-family:var(--fm);flex-wrap:wrap;gap:6px;}
+.disc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r4);padding:12px 16px;font-size:11px;color:var(--muted);line-height:1.7;margin-top:24px;}
+.wa{position:fixed;bottom:90px;right:24px;z-index:90;width:50px;height:50px;border-radius:50%;background:#25D366;color:var(--white);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .18s;}
+.wa:hover{transform:scale(1.08);}
+
+/* ── LIVE AI BOT BUTTON ── */
+.live-bot-section{padding:28px 0 8px;}
+.live-bot-wrap{display:flex;justify-content:center;}
+.btn-live-bot{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#DC2626,#B91C1C);color:var(--white);font-family:var(--fn);font-weight:800;font-size:15px;padding:18px 36px;border-radius:var(--r8);border:2px solid #DC2626;cursor:pointer;text-decoration:none;overflow:hidden;box-shadow:0 6px 24px rgba(220,38,38,.4);animation:livePulse 2s ease-in-out infinite,liveGlow 2.5s ease-in-out infinite;transition:all .18s;letter-spacing:.02em;}
+.btn-live-bot::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:shineLive 2.5s ease-in-out infinite;}
+.btn-live-bot:hover{background:linear-gradient(135deg,#EF4444,#DC2626);border-color:#EF4444;transform:translateY(-2px) scale(1.02);box-shadow:0 10px 36px rgba(220,38,38,.55);}
+.btn-live-bot .live-dot-red{width:10px;height:10px;background:#fff;border-radius:50%;animation:pulseWhite 1.2s infinite;flex-shrink:0;}
+@keyframes livePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes liveGlow{0%,100%{box-shadow:0 6px 24px rgba(220,38,38,.4)}50%{box-shadow:0 8px 36px rgba(220,38,38,.7)}}
+@keyframes shineLive{0%{left:-100%}50%,100%{left:100%}}
+@keyframes pulseWhite{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+
+/* ── LIVE TRADING DASHBOARD ── */
+#live-dashboard{background:#0D1117;color:#E6EDF3;padding:60px 0;}
+#live-dashboard .tag{background:rgba(220,38,38,.2);border-color:rgba(220,38,38,.4);color:#FCA5A5;}
+#live-dashboard h2{color:#E6EDF3;}
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.dash-live-badge{display:flex;align-items:center;gap:8px;background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.4);padding:6px 14px;border-radius:4px;}
+.dash-live-badge .rdot{width:8px;height:8px;background:#EF4444;border-radius:50%;animation:pulse 1.2s infinite;}
+.dash-live-badge span{font-family:var(--fm);font-size:11px;color:#FCA5A5;font-weight:700;letter-spacing:.1em;}
+.dash-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+.dash-stat{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:16px 18px;}
+.dash-stat .ds-label{font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:6px;}
+.dash-stat .ds-val{font-family:var(--fm);font-size:22px;font-weight:700;line-height:1;}
+.dash-stat .ds-chg{font-family:var(--fm);font-size:11px;font-weight:600;margin-top:4px;}
+.ds-pos{color:#3FB950;}
+.ds-neg{color:#F85149;}
+.chart-area{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:20px;margin-bottom:16px;}
+.chart-area .ca-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.chart-area .ca-title{font-family:var(--fm);font-size:12px;color:#E6EDF3;font-weight:600;}
+.chart-area .ca-pair{font-family:var(--fm);font-size:11px;color:#8B949E;}
+.chart-tabs{display:flex;gap:4px;}
+.chart-tab{font-family:var(--fm);font-size:10px;padding:4px 10px;border-radius:4px;border:1px solid #30363D;background:transparent;color:#8B949E;cursor:pointer;transition:all .15s;}
+.chart-tab.active{background:#238636;border-color:#238636;color:#fff;}
+#tradeChart{width:100%;height:200px;display:block;}
+.trades-table{background:#161B22;border:1px solid #30363D;border-radius:8px;overflow:hidden;}
+.trades-table table{width:100%;border-collapse:collapse;}
+.trades-table thead th{padding:10px 14px;text-align:left;font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #30363D;background:#0D1117;}
+.trades-table tbody td{padding:10px 14px;font-size:12px;font-family:var(--fm);border-bottom:1px solid #21262D;}
+.trades-table tbody tr:last-child td{border-bottom:none;}
+.trades-table tbody tr:hover td{background:#161B22;}
+.badge-win{background:rgba(63,185,80,.15);color:#3FB950;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
+.badge-loss{background:rgba(248,81,73,.15);color:#F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
+.badge-open{background:rgba(210,153,34,.15);color:#D29922;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
+.bot-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.bot-sum-card{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:18px;}
+.bot-sum-card h4{font-family:var(--fm);font-size:11px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.progress-bar-wrap{margin-bottom:10px;}
+.progress-bar-wrap .pb-label{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;color:#8B949E;margin-bottom:4px;}
+.progress-bar-wrap .pb-label span:last-child{color:#3FB950;font-weight:700;}
+.pb-track{height:6px;background:#21262D;border-radius:3px;overflow:hidden;}
+.pb-fill{height:100%;border-radius:3px;transition:width 1s ease;}
+.pb-green{background:linear-gradient(90deg,#238636,#3FB950);}
+.pb-red{background:linear-gradient(90deg,#B91C1C,#F85149);}
+
+/* ── GOOGLE REVIEWS SLIDER ── */
+#google-reviews{padding:72px 0;}
+#google-reviews .tag{color:var(--purple);}
+.reviews-slider-wrap{position:relative;overflow:hidden;margin-top:48px;padding:0 8px;}
+.reviews-track{display:flex;gap:20px;transition:transform 0.5s ease;will-change:transform;}
+.review-card{min-width:300px;max-width:300px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r12);padding:22px;box-shadow:0 4px 18px rgba(0,0,0,.07);flex-shrink:0;}
+.review-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.review-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;color:#fff;}
+.review-meta h5{font-size:14px;font-weight:700;margin:0 0 2px;}
+.review-meta .r-date{font-size:11px;color:var(--muted);font-family:var(--fm);}
+.review-stars{display:flex;gap:2px;margin-bottom:10px;}
+.review-stars i{color:#FBBF24;font-size:13px;}
+.review-text{font-size:13px;color:var(--ink-3);line-height:1.7;}
+.google-badge{display:flex;align-items:center;gap:6px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+.google-badge span{font-size:10px;color:var(--muted);font-family:var(--fm);}
+.google-g{font-size:14px;font-weight:800;}
+.review-nav{display:flex;justify-content:center;gap:10px;margin-top:28px;}
+.rev-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);transition:all .18s;}
+.rev-btn:hover{border-color:var(--purple);background:var(--purple-lt);color:var(--purple);}
+.review-dots{display:flex;justify-content:center;gap:6px;margin-top:16px;}
+.rdot-btn{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:background .2s,transform .2s;}
+.rdot-btn.active{background:var(--purple);transform:scale(1.3);}
+.reviews-rating-summary{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:36px;flex-wrap:wrap;}
+.rating-big{text-align:center;}
+.rating-big .rb-num{font-size:56px;font-weight:900;letter-spacing:-0.04em;line-height:1;color:var(--ink);}
+.rating-big .rb-stars{display:flex;gap:3px;justify-content:center;margin:6px 0;}
+.rating-big .rb-stars i{color:#FBBF24;font-size:18px;}
+.rating-big .rb-count{font-size:12px;color:var(--muted);font-family:var(--fm);}
+.rating-bars{display:flex;flex-direction:column;gap:6px;min-width:200px;}
+.rating-bar-row{display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;color:var(--muted);}
+.rating-bar-row .rb-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
+.rating-bar-row .rb-fill{height:100%;background:#FBBF24;border-radius:3px;}
+
+/* ── BOTTOM BAR ── */
+.bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,.08);}
+.bottom-bar-left{display:flex;align-items:center;gap:14px;}
+.bottom-bar-timer{display:flex;flex-direction:column;align-items:flex-start;}
+.bottom-bar-timer .tl{font-family:var(--fm);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:600;}
+.bottom-bar-timer .tv{font-family:var(--fm);font-size:20px;font-weight:700;color:var(--purple);letter-spacing:.05em;line-height:1.2;}
+.bottom-bar-price{display:flex;align-items:center;gap:8px;}
+.bottom-bar-price .bp-was{font-size:13px;color:var(--muted);text-decoration:line-through;}
+.bottom-bar-price .bp-now{font-size:18px;font-weight:800;color:var(--ink);}
+.bottom-bar-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:var(--white);font-family:var(--fn);font-weight:800;font-size:14px;padding:14px 28px;border-radius:var(--r4);border:2px solid var(--ink);cursor:pointer;text-decoration:none;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.15);animation:bounce 2s ease-in-out infinite;transition:all .18s;}
+.bottom-bar-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shine 2.5s ease-in-out infinite;}
+.bottom-bar-btn:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-2px);box-shadow:0 6px 24px rgba(109,40,217,.35);}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes shine{0%{left:-100%}50%,100%{left:100%}}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  section{padding:56px 0;}
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-video-col{order:-1;}
+  .cur-grid{grid-template-columns:1fr;}
+  .feat-grid{grid-template-columns:repeat(2,1fr);}
+  .who-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .benefits-grid{grid-template-columns:repeat(2,1fr);}
+  .dash-stats-row{grid-template-columns:repeat(2,1fr);}
+  .bot-summary{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section{padding:44px 0;}
+  .feat-grid{grid-template-columns:1fr;}
+  .who-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .price-head,.price-body{padding-left:20px;padding-right:20px;}
+  .bonus-card{padding:28px 18px;}
+  .hero-btns{flex-direction:column;}
+  .hero-btns .btn{width:100%;}
+  .benefits-grid{grid-template-columns:1fr;max-width:320px;}
+  .cta-buttons-row{flex-direction:column;align-items:center;}
+  .dash-stats-row{grid-template-columns:1fr 1fr;}
+  .review-card{min-width:260px;max-width:260px;}
+  .bottom-bar{padding:10px 14px;flex-direction:column;gap:8px;}
+  .bottom-bar-left{width:100%;justify-content:space-between;}
+  .bottom-bar-btn{width:100%;padding:12px 20px;font-size:13px;}
+  .bottom-bar-timer .tv{font-size:16px;}
+  .bottom-bar-price .bp-now{font-size:15px;}
+  .nav-logo{height:32px;}
+}
+@media(max-width:420px){
+  .dash-stats-row{grid-template-columns:1fr;}
+}
+.wa{bottom:90px;}
+@media(max-width:600px){.wa{bottom:130px;}}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann">
+  Launch price is live — <span class="chip" id="ann-timer">00:00:00</span> &nbsp;·&nbsp; Only <strong id="seats-top">12</strong> seats left
+</div>
+
+<!-- NAV — Logo image replaced text -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" target="_self">
+      <img 
+        src="https://i.ibb.co/N6rrhCpz/Whats-App-Image-2026-06-25-at-20-36-40.jpg" 
+        alt="fxeye" 
+        class="nav-logo"
+      >
+    </a>
+    <div class="nav-right">
+      <div class="nav-price"><del style="font-size:11px">&#x20B9;5,23,000</del> &nbsp;<strong>&#x20B9;15,000</strong></div>
+      <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="btn btn-dark">
+        <i class="fa-solid fa-lock" style="font-size:10px"></i> Enroll Now
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="live-pill">
+          <div class="live-dot"></div>
+          <span>Batch 2026 — Enrollment is Now Open</span>
+        </div>
+        <h1>Learn <span class="hi">Forex Trading</span> & Content Creation. Build income beyond your job.</h1>
+        <p class="hero-sub">One program, two skills — trading profits and content income growing together. Step-by-step from Day 1.</p>
+        <div class="hero-btns">
+          <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="btn btn-cta-sm">
+            <i class="fa-solid fa-lock" style="font-size:12px"></i> Secure Your Seat — &#x20B9;15,000
+          </a>
+          <a href="#curriculum" class="btn btn-ghost">
+            View Curriculum <i class="fa-solid fa-arrow-down" style="font-size:11px"></i>
+          </a>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="n">500+</span><span class="l">Students</span></div>
+          <div class="stat"><span class="n">94%</span><span class="l">Completion</span></div>
+          <div class="stat"><span class="n">5+ Yrs</span><span class="l">Experience</span></div>
+        </div>
+      </div>
+      <div class="hero-video-col">
+        <div class="hero-video-wrap" style="background:transparent;border:none;box-shadow:none;">
+          <img src="https://i.ibb.co/Kp5vWrn7/file-000000005d347208b9302a04a6b097bd.png" alt="fxeye Course" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r16);border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.12);">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="https://i.ibb.co/1tNVnyYX/Whats-App-Image-2026-06-25-at-12-22-45.jpg" alt="fxeye Mentor" class="about-img">
+      <div class="about-body">
+        <span class="tag"><i class="fa-solid fa-user"></i> About the Mentor</span>
+        <h2>Hi, I'm Aatish Oberoi.</h2>
+        <p>I spent years making mistakes, losing money, and restarting while learning Forex trading and content creation. When I finally cracked both, I decided to put everything into one structured program so you don't have to go through the same pain I did.</p>
+        <p>Today I teach students across India how to build real income — not just hype, real results. 500+ students have gone through this program.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check"></i> 5+ years of active Forex trading, consistently profitable</li>
+          <li><i class="fa-solid fa-check"></i> 500+ students trained since 2021</li>
+          <li><i class="fa-solid fa-check"></i> YouTube channel — 50,000+ subscribers</li>
+          <li><i class="fa-solid fa-check"></i> Instagram community — 100,000+ followers</li>
+          <li><i class="fa-solid fa-check"></i> Multiple income sources — trading, content, courses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: LIVE AI BOT TRADING DASHBOARD -->
+<section id="live-dashboard">
+  <div class="wrap">
+    <div class="tc" style="margin-bottom:36px;">
+      <span class="tag"><i class="fa-solid fa-robot"></i> AI Bot Live</span>
+      <h2>Live AI Bot Trading Dashboard</h2>
+      <p style="color:#8B949E;font-size:15px;margin-top:8px;">Real-time performance — updated automatically</p>
+    </div>
+
+    <div class="dash-header">
+      <div class="dash-live-badge">
+        <div class="rdot"></div>
+        <span>LIVE</span>
+      </div>
+      <div style="font-family:var(--fm);font-size:11px;color:#8B949E;" id="live-clock">--:--:-- IST</div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="dash-stats-row">
+      <div class="dash-stat">
+        <div class="ds-label">Today's P&L</div>
+        <div class="ds-val ds-pos" id="stat-pnl">+$284.50</div>
+        <div class="ds-chg ds-pos"><i class="fa-solid fa-arrow-trend-up"></i> +3.8% today</div>
+      </div>
+      <div class="dash-stat">
+        <div class="ds-label">Win Rate</div>
+        <div class="ds-val ds-pos" id="stat-wr">73.4%</div>
+        <div class="ds-chg" style="color:#8B949E;">Last 30 days</div>
+      </div>
+      <div class="dash-stat">
+        <div class="ds-label">Open Trades</div>
+        <div class="ds-val" style="color:#D29922;" id="stat-open">3</div>
+        <div class="ds-chg" style="color:#8B949E;">Active positions</div>
+      </div>
+      <div class="dash-stat">
+        <div class="ds-label">Total Profit</div>
+        <div class="ds-val ds-pos">+$12,840</div>
+        <div class="ds-chg" style="color:#8B949E;">Since Jan 2026</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-area">
+      <div class="ca-header">
+        <div>
+          <div class="ca-title">EUR/USD — Equity Curve</div>
+          <div class="ca-pair" id="live-price">1.08432 &nbsp;<span style="color:#3FB950;">▲ +0.0024</span></div>
+        </div>
+        <div class="chart-tabs">
+          <button class="chart-tab active" onclick="setTab(this,'1D')">1D</button>
+          <button class="chart-tab" onclick="setTab(this,'1W')">1W</button>
+          <button class="chart-tab" onclick="setTab(this,'1M')">1M</button>
+        </div>
+      </div>
+      <canvas id="tradeChart"></canvas>
+    </div>
+
+    <!-- Recent Trades Table -->
+    <div class="trades-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Pair</th>
+            <th>Type</th>
+            <th>Entry</th>
+            <th>Exit / SL</th>
+            <th>P&L</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="trades-body">
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bot Summary -->
+    <div class="bot-summary">
+      <div class="bot-sum-card">
+        <h4>Performance Breakdown</h4>
+        <div class="progress-bar-wrap">
+          <div class="pb-label"><span>Win Trades</span><span>73%</span></div>
+          <div class="pb-track"><div class="pb-fill pb-green" style="width:73%"></div></div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="pb-label"><span>Loss Trades</span><span style="color:#F85149;">27%</span></div>
+          <div class="pb-track"><div class="pb-fill pb-red" style="width:27%"></div></div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="pb-label"><span>Risk/Reward</span><span>1:2.4</span></div>
+          <div class="pb-track"><div class="pb-fill pb-green" style="width:83%"></div></div>
+        </div>
+      </div>
+      <div class="bot-sum-card">
+        <h4>Bot Stats — This Month</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px;">
+          <div>
+            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Total Trades</div>
+            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#E6EDF3;" id="stat-trades">148</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Avg Profit</div>
+            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#3FB950;">$86.7</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Max Drawdown</div>
+            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#F85149;">-4.2%</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Sharpe Ratio</div>
+            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#E6EDF3;">2.18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-book-open"></i> Full Curriculum</span>
+      <h2>What You Will Learn</h2>
+      <p class="lead" style="max-width:480px;margin:10px auto 0">Two complete skill tracks. One structured program. Designed to work together.</p>
+    </div>
+    <div class="cur-grid">
+      <div class="mod">
+        <div class="mod-head"><div class="ml">Module 01</div><h3>Forex Trading</h3></div>
+        <ul class="mod-list">
+          <li><i class="fa-solid fa-circle-dot"></i> Forex Basics & How Markets Work</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Market Structure & Trend Analysis</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Price Action Strategies</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Risk Management System</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Live Trading Setup & Execution</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Trading Psychology & Discipline</li>
+        </ul>
+      </div>
+      <div class="mod">
+        <div class="mod-head"><div class="ml">Module 02</div><h3>Content Creation</h3></div>
+        <ul class="mod-list">
+          <li><i class="fa-solid fa-circle-dot"></i> Personal Branding from Zero</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Reels That Actually Get Views</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Video Editing — Full Workflow</li>
+          <li><i class="fa-solid fa-circle-dot"></i> YouTube Growth Strategy</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Instagram Growth & Engagement</li>
+          <li><i class="fa-solid fa-circle-dot"></i> Monetization & Multiple Revenue Streams</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section id="bonus">
+  <div class="wrap tc">
+    <span class="tag"><i class="fa-solid fa-gift"></i> Exclusive Bonus</span>
+    <h2>There's a bonus too. We won't reveal what it is yet.</h2>
+    <div class="bonus-card">
+      <h3>A Secret System — Value Over &#x20B9;25,000</h3>
+      <p>This is only revealed after enrollment. It's a complete income system that our top students used to start earning within 30 days. And it's not available anywhere else — join today and get it for free.</p>
+      <div class="bonus-tag">Revealed after payment — Worth &#x20B9;25,000+</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing-modern" class="alt">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-tag"></i> Enrollment</span>
+      <h2>One price. Everything included. Lifetime access.</h2>
+    </div>
+    <div class="value-breakdown">
+      <div class="value-breakdown-head"><h3><i class="fa-solid fa-receipt" style="color:var(--purple);margin-right:6px;"></i> Total Value Breakdown</h3></div>
+      <ul class="value-breakdown-list">
+        <li><span class="val-label"><i class="fa-solid fa-chart-line"></i> Forex Trading Course</span><span class="val-amount">&#x20B9;50,000</span></li>
+        <li><span class="val-label"><i class="fa-solid fa-video"></i> Content Creation Course</span><span class="val-amount">&#x20B9;30,000</span></li>
+        <li><span class="val-label"><i class="fa-solid fa-gift"></i> Surprise Bonus</span><span class="val-amount">&#x20B9;20,000</span></li>
+        <li><span class="val-label"><i class="fa-solid fa-robot"></i> FREE AI Bot <span style="font-size:10px;color:var(--green);font-weight:700;">(LIMITED)</span></span><span class="val-amount" style="color:var(--green);">$4,500 (~&#x20B9;4,23,000)</span></li>
+        <li class="val-total"><span class="val-label">Total Market Value</span><span class="val-amount">&#x20B9;5,23,000</span></li>
+      </ul>
+      <div class="value-breakdown-footer">
+        <div class="ai-bot-highlight"><i class="fa-solid fa-robot"></i> FREE AI BOT for every candidate — Market Price $4,500!</div>
+      </div>
+    </div>
+    <div class="price-card" style="margin-top:28px;">
+      <div class="price-head">
+        <div class="price-row" style="justify-content:center;flex-direction:column;align-items:center;gap:4px;">
+          <div style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-bottom:4px;">&#x20B9;5,23,000</div>
+          <div class="price-now" style="display:flex;align-items:center;gap:4px;"><span style="font-size:20px;font-weight:800;">&#x20B9;</span>15,000</div>
+          <div style="font-size:13px;color:var(--muted);font-weight:600;margin-top:4px;">India &nbsp;|&nbsp; <span style="color:var(--purple);font-weight:800;">$150</span> Only (Crypto/PayPal)</div>
+        </div>
+        <div class="save-tag"><i class="fa-solid fa-bolt"></i> &nbsp;Save &#x20B9;5,08,000 — Launch offer today only</div>
+      </div>
+      <div class="price-body">
+        <ul class="inc-list">
+          <li><i class="fa-solid fa-check"></i> Complete Forex Trading Module (6 topics)</li>
+          <li><i class="fa-solid fa-check"></i> Complete Content Creation Module (6 topics)</li>
+          <li><i class="fa-solid fa-check"></i> Lifetime access + all future updates</li>
+          <li><i class="fa-solid fa-check"></i> Private community access</li>
+          <li><i class="fa-solid fa-check"></i> Downloadable resources &amp; templates</li>
+          <li><i class="fa-solid fa-check"></i> Surprise bonus — worth &#x20B9;25,000+</li>
+          <li><i class="fa-solid fa-check"></i> <strong style="color:var(--green);">FREE AI Bot — Value $4,500</strong></li>
+          <li><i class="fa-solid fa-check"></i> Direct mentor support</li>
+        </ul>
+        <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="btn btn-cta"><i class="fa-solid fa-lock" style="font-size:14px"></i> Enroll Now</a>
+        <div class="secure"><i class="fa-solid fa-shield-halved"></i> Cashfree Payment &nbsp;·&nbsp; SSL Encrypted &nbsp;·&nbsp; Instant Access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA BENEFITS -->
+<section id="extra-benefits">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-gem"></i> Extra Benefits</span>
+      <h2>More Than Just a Course</h2>
+      <p class="lead" style="max-width:480px;margin:10px auto 0">Everything you need to start trading and creating — all included.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card"><div class="benefit-ico purple"><i class="fa-solid fa-crown"></i></div><h4>FREE VIP Group Access</h4><p>Join our exclusive VIP community for signals, updates, and direct support.</p></div>
+      <div class="benefit-card"><div class="benefit-ico green"><i class="fa-solid fa-arrow-trend-up"></i></div><h4>Binary Options Trading</h4><p>Complete Quotex trading module — strategies that work on real markets.</p></div>
+      <div class="benefit-card"><div class="benefit-ico orange"><i class="fa-solid fa-newspaper"></i></div><h4>Daily Analysis FREE</h4><p>Get daily market analysis and trade setups delivered every morning.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BUTTONS -->
+<section id="cta-section" class="alt">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-link"></i> Quick Links</span>
+      <h2>Connect With Us</h2>
+      <p class="lead" style="max-width:420px;margin:10px auto 0">Join our platforms for live updates, signals, and community support.</p>
+    </div>
+    <div class="cta-buttons-row">
+      <a href="#" class="btn-tradingview"><i class="fa-solid fa-chart-candlestick"></i> TradingView</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="#" class="btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="alt">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-star"></i> What's Included</span>
+      <h2>Built to Actually Work</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-infinity"></i></div><h4>Lifetime Access</h4><p>Pay once. Access forever — future updates included for free.</p></div>
+      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-mobile-screen"></i></div><h4>Mobile Friendly</h4><p>Learn on phone, tablet, or laptop — any device.</p></div>
+      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-circle-play"></i></div><h4>Recorded Classes</h4><p>Watch on your schedule. Rewatch any session anytime.</p></div>
+      <div class="feat"><div class="feat-ico"><i class="fa-brands fa-whatsapp"></i></div><h4>Private Community</h4><p>WhatsApp group — active students and direct mentor access.</p></div>
+      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-arrows-rotate"></i></div><h4>Regular Updates</h4><p>Markets and platforms change — course content stays current.</p></div>
+      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-file-arrow-down"></i></div><h4>Downloadable Resources</h4><p>PDFs, trading templates, checklists, editing presets — all yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE TESTIMONIALS -->
+<section id="results" class="testimonials-section">
+  <div class="section-header">
+    <span class="tag"><i class="fa-solid fa-trophy"></i> Real Results</span>
+    <h2>What Students Are Saying</h2>
+    <p class="lead" style="max-width:420px;margin:10px auto 0">Real results from people who started with zero experience.</p>
+  </div>
+  <div class="marquee-outer">
+    <div class="marquee-inner" id="row1"></div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS SLIDER -->
+<section id="google-reviews">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-brands fa-google"></i> Google Reviews</span>
+      <h2>Verified Student Reviews</h2>
+      <p class="lead" style="max-width:420px;margin:10px auto 0">Real reviews from real students — directly from Google.</p>
+    </div>
+    <div class="reviews-rating-summary" style="margin-top:36px;">
+      <div class="rating-big">
+        <div class="rb-num">4.9</div>
+        <div class="rb-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <div class="rb-count">Based on 500+ reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-bar-row"><span>5★</span><div class="rb-track"><div class="rb-fill" style="width:88%"></div></div><span style="color:var(--ink);font-weight:600;">88%</span></div>
+        <div class="rating-bar-row"><span>4★</span><div class="rb-track"><div class="rb-fill" style="width:8%"></div></div><span style="color:var(--ink);font-weight:600;">8%</span></div>
+        <div class="rating-bar-row"><span>3★</span><div class="rb-track"><div class="rb-fill" style="width:3%"></div></div><span style="color:var(--ink);font-weight:600;">3%</span></div>
+        <div class="rating-bar-row"><span>2★</span><div class="rb-track"><div class="rb-fill" style="width:1%"></div></div><span style="color:var(--ink);font-weight:600;">1%</span></div>
+        <div class="rating-bar-row"><span>1★</span><div class="rb-track"><div class="rb-fill" style="width:0%"></div></div><span style="color:var(--ink);font-weight:600;">0%</span></div>
+      </div>
+    </div>
+    <div class="reviews-slider-wrap">
+      <div class="reviews-track" id="reviewsTrack"></div>
+    </div>
+    <div class="review-nav">
+      <button class="rev-btn" onclick="moveReviews(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="rev-btn" onclick="moveReviews(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="review-dots" id="reviewDots"></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="why" class="alt">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-chart-bar"></i> Comparison</span>
+      <h2>Why This is Different</h2>
+    </div>
+    <div class="cmp-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th><i class="fa-solid fa-xmark"></i> &nbsp;Other Courses</th><th><i class="fa-solid fa-check"></i> &nbsp;This Program</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Skills covered</td><td class="xc">Trading or content — never both</td><td class="oc">Full trading + content creation</td></tr>
+          <tr><td>Mentor access</td><td class="xc">No support after payment</td><td class="oc">Community + direct mentor</td></tr>
+          <tr><td>Training depth</td><td class="xc">Overview level, no structure</td><td class="oc">Step-by-step complete roadmap</td></tr>
+          <tr><td>AI Bot included</td><td class="xc">Not available</td><td class="oc">FREE AI Bot — Value $4,500</td></tr>
+          <tr><td>Bonus</td><td class="xc">Nothing</td><td class="oc">Secret bonus — worth &#x20B9;25,000+</td></tr>
+          <tr><td>Access period</td><td class="xc">Expires</td><td class="oc">Lifetime + free updates</td></tr>
+          <tr><td>Student proof</td><td class="xc">Someone else's screenshots</td><td class="oc">500+ verified students</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-users"></i> Who Is This For</span>
+      <h2>This course is for you if...</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-graduation-cap"></i></div><h4>Students</h4><p>Earn while you study — no finance background needed.</p></div>
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-briefcase"></i></div><h4>Working Professionals</h4><p>Add a secondary income stream without quitting your job.</p></div>
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-store"></i></div><h4>Business Owners</h4><p>Diversify revenue with trading profits and content brand.</p></div>
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-seedling"></i></div><h4>Complete Beginners</h4><p>Zero experience required. We start from absolute scratch.</p></div>
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-laptop-code"></i></div><h4>Freelancers</h4><p>Add high-value skills and build a personal brand.</p></div>
+      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-house-heart"></i></div><h4>Homemakers</h4><p>Earn from home, on your own schedule — fully flexible.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="tc">
+      <span class="tag"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+      <h2>Common Questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Can beginners join?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes — this program is designed from the ground up for beginners. No prior trading, content, or finance background is needed. We cover everything from zero.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How long until I see results?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">It depends on how much time you put in. Most students start seeing results within 30 to 60 days. Lifetime access means no pressure — learn at your own pace.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Do I get lifetime access?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes. Once you enroll, the content is yours forever. Future updates for both modules are also included for free — we add them regularly.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Can I access it on mobile?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Absolutely. The course is delivered via Google Drive — works on any device. No app download needed.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Is Forex trading legal in India?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes, Forex trading is legal in India through SEBI-regulated brokers and permitted currency pairs. We cover the legal framework and compliant strategies in the course.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">What is the refund policy?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">This is a digital product and access is delivered immediately after payment — so no refunds. Please read everything carefully before enrolling. Contact support@fxeye.com for any technical issues.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How do I access the course after payment?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">After successful payment, you'll get an access page with a Google Drive link. The same link is also sent to your registered email immediately.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="https://i.ibb.co/N6rrhCpz/Whats-App-Image-2026-06-25-at-20-36-40.jpg" alt="fxeye" style="height:40px;width:auto;margin-bottom:12px;object-fit:contain;">
+        <p class="footer-desc">We teach students across India how to build real income — through Forex trading and content creation — since 2021.</p>
+      </div>
+      <div>
+        <div class="fc-title">Legal</div>
+        <ul class="fc-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fc-title">Contact</div>
+        <ul class="fc-links">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="https://wa.me/91XXXXXXXXXX">WhatsApp Support</a></li>
+          <li><a href="mailto:support@fxeye.com">support@fxeye.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disc">Risk Disclosure: Forex trading involves significant risk. Past student results do not guarantee future performance. Only trade what you can afford to lose. This course is for educational purposes only — not financial advice.</div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 fxeye Education. All rights reserved.</span>
+      <span>Made in India &#x1F1EE;&#x1F1F3;</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/91XXXXXXXXXX" class="wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <div class="bottom-bar-timer">
+      <span class="tl">Offer Ends In</span>
+      <span class="tv" id="bottom-timer">00:00:00</span>
+    </div>
+    <div class="bottom-bar-price">
+      <span class="bp-was">&#x20B9;5,23,000</span>
+      <span class="bp-now">&#x20B9;15,000</span>
+    </div>
+  </div>
+  <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="bottom-bar-btn"><i class="fa-solid fa-lock" style="font-size:11px"></i> Enroll Now</a>
+</div>
+
+<script>
+/* ── COUNTDOWN ── */
+(function(){
+  const KEY='fxeye_dl_v2';
+  let end=localStorage.getItem(KEY);
+  if(!end){end=Date.now()+(5*3600+47*60)*1000;localStorage.setItem(KEY,end);}
+  end=parseInt(end);
+  const el=document.getElementById('ann-timer');
+  const bel=document.getElementById('bottom-timer');
+  function tick(){
+    const d=end-Date.now();
+    if(d<=0){if(el)el.textContent='00:00:00';if(bel)bel.textContent='00:00:00';return;}
+    const h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+    const f=[h,m,s].map(n=>String(n).padStart(2,'0')).join(':');
+    if(el)el.textContent=f;if(bel)bel.textContent=f;
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* ── SEAT COUNTER ── */
+(function(){
+  let s=12;
+  setInterval(()=>{
+    if(s>4&&Math.random()<.12){
+      s--;
+      document.getElementById('seats-top').textContent=s;
+    }
+  },9000);
+})();
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ico i').className='fa-solid fa-plus';});
+  if(!isOpen){item.classList.add('open');btn.querySelector('.faq-ico i').className='fa-solid fa-minus';}
+}
+
+/* ── MARQUEE TESTIMONIALS ── */
+const imgs=['https://i.ibb.co/FLYkdfwz/1.jpg','https://i.ibb.co/s9np0rXH/2.jpg','https://i.ibb.co/qMB0qW38/3.jpg','https://i.ibb.co/hRXFy5Hx/4.jpg','https://i.ibb.co/VYRrdXKt/5.jpg','https://i.ibb.co/VW9srR0h/6.jpg','https://i.ibb.co/SDq6W1W5/7.jpg'];
+const row1=document.getElementById('row1');
+if(row1){[...imgs,...imgs].forEach(src=>{const d=document.createElement('div');d.className='tcard';d.innerHTML=`<img src="${src}" alt="Student" loading="lazy"/>`;row1.appendChild(d);});}
+
+/* ── LIVE CLOCK ── */
+function updateClock(){
+  const now=new Date();
+  const ist=new Date(now.getTime()+5.5*3600000);
+  const h=String(ist.getUTCHours()).padStart(2,'0');
+  const m=String(ist.getUTCMinutes()).padStart(2,'0');
+  const s=String(ist.getUTCSeconds()).padStart(2,'0');
+  const el=document.getElementById('live-clock');
+  if(el)el.textContent=`${h}:${m}:${s} IST`;
+}
+setInterval(updateClock,1000);updateClock();
+
+/* ── LIVE PRICE TICKER ── */
+let basePrice=1.08432;
+function tickPrice(){
+  basePrice+=((Math.random()-0.499)*0.0003);
+  basePrice=Math.max(1.0780,Math.min(1.0920,basePrice));
+  const el=document.getElementById('live-price');
+  if(el){
+    const change=(basePrice-1.08432);
+    const col=change>=0?'#3FB950':'#F85149';
+    const arrow=change>=0?'▲':'▼';
+    el.innerHTML=`${basePrice.toFixed(5)} &nbsp;<span style="color:${col};">${arrow} ${Math.abs(change).toFixed(4)}</span>`;
+  }
+}
+setInterval(tickPrice,2200);
+
+/* ── LIVE P&L TICKER ── */
+let pnl=284.50;
+function tickPnl(){
+  pnl+=(Math.random()-0.42)*8;
+  pnl=Math.max(180,Math.min(450,pnl));
+  const el=document.getElementById('stat-pnl');
+  if(el){el.textContent=`+$${pnl.toFixed(2)}`;el.className='ds-val ds-pos';}
+}
+setInterval(tickPnl,3500);
+
+/* ── TRADE TABLE ── */
+const tradeData=[
+  {pair:'EUR/USD',type:'BUY',entry:'1.08210',exit:'1.08440',pnl:'+$115.20',status:'win'},
+  {pair:'GBP/USD',type:'SELL',entry:'1.27340',exit:'1.27110',pnl:'+$92.80',status:'win'},
+  {pair:'USD/JPY',type:'BUY',entry:'158.720',exit:'—',pnl:'+$44.60',status:'open'},
+  {pair:'XAU/USD',type:'SELL',entry:'2341.50',exit:'2328.90',pnl:'+$63.00',status:'win'},
+  {pair:'EUR/GBP',type:'BUY',entry:'0.85120',exit:'0.84980',pnl:'-$28.40',status:'loss'},
+  {pair:'AUD/USD',type:'BUY',entry:'0.65430',exit:'—',pnl:'+$12.20',status:'open'},
+];
+const tbody=document.getElementById('trades-body');
+if(tbody){
+  tradeData.forEach(t=>{
+    const badge=t.status==='win'?'badge-win':t.status==='loss'?'badge-loss':'badge-open';
+    const label=t.status==='win'?'WIN':t.status==='loss'?'LOSS':'OPEN';
+    const pnlCol=t.pnl.startsWith('+')?'color:#3FB950':'color:#F85149';
+    tbody.innerHTML+=`<tr>
+      <td style="color:#E6EDF3;font-weight:700;">${t.pair}</td>
+      <td style="color:${t.type==='BUY'?'#3FB950':'#F85149'};font-weight:700;">${t.type}</td>
+      <td>${t.entry}</td>
+      <td>${t.exit}</td>
+      <td style="${pnlCol};font-weight:700;">${t.pnl}</td>
+      <td><span class="${badge}">${label}</span></td>
+    </tr>`;
+  });
+}
+
+/* ── CHART ── */
+function drawChart(tab){
+  const canvas=document.getElementById('tradeChart');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||800;
+  canvas.height=200;
+  const W=canvas.width,H=canvas.height;
+  let points;
+  if(tab==='1D'){
+    points=[100,112,108,118,115,125,120,132,128,138,135,142,140,148,145,155,150,158,155,162,160,168,165,172];
+  } else if(tab==='1W'){
+    points=[80,85,90,88,95,100,98,108,105,115,112,120,118,128,125,135,130,140,138,145,142,150,148,155];
+  } else {
+    points=[50,55,60,58,65,70,68,75,80,85,82,90,95,100,98,108,110,115,112,120,125,130,128,138,140,145];
+  }
+  const min=Math.min(...points)-5,max=Math.max(...points)+5;
+  const scaleY=v=>H-((v-min)/(max-min))*(H*0.85)-H*0.07;
+  const scaleX=i=>(i/(points.length-1))*W;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='rgba(48,54,61,0.8)';
+  ctx.lineWidth=1;
+  for(let i=0;i<4;i++){
+    const y=H*0.07+i*(H*0.85/3);
+    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+  }
+  const grad=ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,'rgba(63,185,80,0.3)');
+  grad.addColorStop(1,'rgba(63,185,80,0)');
+  ctx.beginPath();
+  ctx.moveTo(scaleX(0),H);
+  points.forEach((v,i)=>ctx.lineTo(scaleX(i),scaleY(v)));
+  ctx.lineTo(scaleX(points.length-1),H);
+  ctx.closePath();
+  ctx.fillStyle=grad;
+  ctx.fill();
+  ctx.beginPath();
+  ctx.strokeStyle='#3FB950';
+  ctx.lineWidth=2.5;
+  ctx.lineJoin='round';
+  ctx.lineCap='round';
+  points.forEach((v,i)=>{i===0?ctx.moveTo(scaleX(i),scaleY(v)):ctx.lineTo(scaleX(i),scaleY(v));});
+  ctx.stroke();
+  const lx=scaleX(points.length-1),ly=scaleY(points[points.length-1]);
+  ctx.beginPath();ctx.arc(lx,ly,5,0,Math.PI*2);
+  ctx.fillStyle='#3FB950';ctx.fill();
+  ctx.strokeStyle='#0D1117';ctx.lineWidth=2;ctx.stroke();
+}
+
+function setTab(btn,tab){
+  document.querySelectorAll('.chart-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  drawChart(tab);
+}
+
+window.addEventListener('load',()=>drawChart('1D'));
+window.addEventListener('resize',()=>{
+  const activeTab=document.querySelector('.chart-tab.active');
+  drawChart(activeTab?activeTab.textContent:'1D');
+});
+
+/* ── GOOGLE REVIEWS ── */
+const reviews=[
+  {name:'Rahul Sharma',loc:'Delhi',date:'2 weeks ago',rating:5,color:'#6D28D9',text:'Aatish bhai ka course ekdum mast hai! Maine 45 din mein pehli profitable trade ki. Content creation module bhi bahut useful hai. Paise wasool!'},
+  {name:'Priya Nair',loc:'Kerala',date:'1 month ago',rating:5,color:'#DC2626',text:'Sach mein bahut achha course hai. Maine Forex ke baare mein kuch nahi jaanta tha. Ab main daily analysis kar sakti hoon. AI bot bhi kaam kar raha hai!'},
+  {name:'Vikram Singh',loc:'Jaipur',date:'3 weeks ago',rating:5,color:'#16A34A',text:'5 stars dene ka mann hai 10 stars deta! Trading psychology wala module ne mujhe bahut help ki. Loss hona band ho gaya almost. Highly recommend!'},
+  {name:'Anjali Mehta',loc:'Mumbai',date:'1 month ago',rating:5,color:'#EA580C',text:'Content creation + forex dono ek saath seekhna ka idea genius hai. Ab mera Instagram grow bhi ho raha hai aur trading se bhi kamaai ho rahi hai.'},
+  {name:'Suresh Patel',loc:'Ahmedabad',date:'2 months ago',rating:5,color:'#0891B2',text:'Bahut hi detailed course. Aatish bhai explain karte hain bahut clearly. WhatsApp group mein bhi support milta hai. Worth it definitely.'},
+  {name:'Meena Krishnan',loc:'Chennai',date:'3 weeks ago',rating:4,color:'#7C3AED',text:'Course content bahut accha hai. Thoda aur live sessions hote toh aur achha hota. But overall mai satisfied hoon. Trading seekhna easy ho gaya.'},
+  {name:'Deepak Yadav',loc:'Lucknow',date:'5 weeks ago',rating:5,color:'#BE185D',text:'Maine bohot courses kiye hai lekin ye sabse practical hai. Real trade examples se samajhna aasan ho gaya. AI bot ka result bhi dekh ke khushi hoti hai.'},
+  {name:'Riya Kapoor',loc:'Pune',date:'1 month ago',rating:5,color:'#059669',text:'Homemaker hoon aur ghar se hi trading sikh liya. Aatish bhai bahut patience se samjhate hain. Recommend karungi sab logo ko!'},
+  {name:'Arjun Reddy',loc:'Hyderabad',date:'2 weeks ago',rating:5,color:'#B45309',text:'Risk management wala module game changer hai. Pehle bahut loss hota tha, ab managed trades kar raha hoon. AI bot bhi impressive results de raha hai.'},
+];
+
+let currentReview=0;
+const VISIBLE=3;
+
+function buildReviews(){
+  const track=document.getElementById('reviewsTrack');
+  const dots=document.getElementById('reviewDots');
+  if(!track||!dots)return;
+  track.innerHTML='';
+  reviews.forEach((r,i)=>{
+    const stars='<i class="fa-solid fa-star"></i>'.repeat(r.rating)+(r.rating<5?'<i class="fa-regular fa-star"></i>'.repeat(5-r.rating):'');
+    const initials=r.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    track.innerHTML+=`<div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar" style="background:${r.color};">${initials}</div>
+        <div class="review-meta"><h5>${r.name}</h5><div class="r-date">${r.loc} · ${r.date}</div></div>
+      </div>
+      <div class="review-stars">${stars}</div>
+      <p class="review-text">${r.text}</p>
+      <div class="google-badge">
+        <span class="google-g" style="color:#4285F4;">G</span>
+        <span style="color:#EA4335;">o</span>
+        <span style="color:#FBBC05;">o</span>
+        <span style="color:#4285F4;">g</span>
+        <span style="color:#34A853;">l</span>
+        <span style="color:#EA4335;">e</span>
+        <span>&nbsp;Review</span>
+      </div>
+    </div>`;
+  });
+  const pages=reviews.length-VISIBLE+1;
+  dots.innerHTML='';
+  for(let i=0;i<pages;i++){
+    dots.innerHTML+=`<button class="rdot-btn${i===0?' active':''}" onclick="goToReview(${i})"></button>`;
+  }
+}
+
+function goToReview(idx){
+  const cards=document.querySelectorAll('.review-card');
+  if(!cards.length)return;
+  const cardW=cards[0].offsetWidth+20;
+  const maxIdx=reviews.length-VISIBLE;
+  currentReview=Math.max(0,Math.min(idx,maxIdx));
+  document.getElementById('reviewsTrack').style.transform=`translateX(-${currentReview*cardW}px)`;
+  document.querySelectorAll('.rdot-btn').forEach((d,i)=>d.classList.toggle('active',i===currentReview));
+}
+
+function moveReviews(dir){
+  goToReview(currentReview+dir);
+}
+
+buildReviews();
+
+setInterval(()=>{
+  const maxIdx=reviews.length-VISIBLE;
+  currentReview=currentReview>=maxIdx?0:currentReview+1;
+  goToReview(currentReview);
+},4000);
+</script>
+</body>
+</html>
+ 

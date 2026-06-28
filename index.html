@@ -84,23 +84,17 @@ h1{margin-bottom:16px;}
 .mod-list li i{color:var(--purple);font-size:9px;width:10px;flex-shrink:0;}
 
 /* ── TRADINGVIEW SECTION ── */
-#tradingview-section{background:#0D1117;padding:72px 0;}
-#tradingview-section .tag{background:rgba(38,166,154,.15);border-color:rgba(38,166,154,.4);color:#4DD0C4;}
-#tradingview-section h2{color:#E6EDF3;}
-#tradingview-section .lead{color:#8B949E;}
-.tv-chart-wrap{margin-top:40px;border-radius:var(--r12);overflow:hidden;border:1px solid #30363D;box-shadow:0 16px 48px rgba(0,0,0,.4);}
-.tv-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
-.tv-tab{font-family:var(--fm);font-size:11px;font-weight:600;padding:7px 16px;border-radius:4px;border:1px solid #30363D;background:transparent;color:#8B949E;cursor:pointer;transition:all .15s;letter-spacing:.06em;}
+#tradingview-section{background:#0D1117;padding:0;margin:0;}
+.tv-controls{padding:20px 16px 12px;background:#0D1117;}
+.tv-chart-wrap{width:100%;border:none;overflow:hidden;background:#0D1117;}
+.tv-tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.tv-tab{font-family:var(--fm);font-size:11px;font-weight:600;padding:7px 14px;border-radius:4px;border:1px solid #30363D;background:transparent;color:#8B949E;cursor:pointer;transition:all .15s;letter-spacing:.06em;}
 .tv-tab.active{background:#26a69a;border-color:#26a69a;color:#fff;}
 .tv-tab:hover:not(.active){border-color:#8B949E;color:#E6EDF3;}
-.tv-pairs-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.tv-pairs-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
 .tv-pair-btn{font-family:var(--fm);font-size:10px;font-weight:700;padding:5px 12px;border-radius:3px;border:1px solid #30363D;background:#161B22;color:#8B949E;cursor:pointer;transition:all .15s;letter-spacing:.08em;}
 .tv-pair-btn.active{background:#1e3a5f;border-color:#388bfd;color:#79c0ff;}
 .tv-pair-btn:hover:not(.active){border-color:#8B949E;color:#E6EDF3;}
-.tv-info-bar{display:flex;align-items:center;gap:20px;padding:14px 20px;background:#161B22;border:1px solid #30363D;border-radius:var(--r8);margin-bottom:16px;flex-wrap:wrap;}
-.tv-info-item{display:flex;flex-direction:column;gap:2px;}
-.tv-info-item .ti-label{font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;}
-.tv-info-item .ti-val{font-family:var(--fm);font-size:13px;font-weight:700;color:#E6EDF3;}
 .ti-green{color:#3FB950!important;}
 .ti-red{color:#F85149!important;}
 
@@ -282,6 +276,8 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   .nav-logo{height:32px;}
   .tv-tabs{gap:5px;}
   .tv-tab{font-size:10px;padding:6px 10px;}
+  #tradingview-section .tradingview-widget-container{height:380px!important;}
+  #tradingview-section .tradingview-widget-container > div{height:100%!important;}
 }
 .wa{bottom:90px;}
 @media(max-width:600px){.wa{bottom:130px;}}
@@ -368,14 +364,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
 
 <!-- TRADINGVIEW LIVE CHART SECTION -->
 <section id="tradingview-section">
-  <div class="wrap">
-    <div class="tc" style="margin-bottom:36px;">
-      <span class="tag"><i class="fa-solid fa-chart-candlestick"></i> Live Markets</span>
-      <h2>Live Market Charts — Powered by TradingView</h2>
-      <p class="lead" style="color:#8B949E;margin-top:8px;">Real-time Forex charts. The exact charts used in the course.</p>
-    </div>
-
-    <!-- Pair selector tabs -->
+  <div class="tv-controls">
     <div class="tv-pairs-row">
       <button class="tv-pair-btn active" onclick="loadChart('EURUSD',this)">EUR/USD</button>
       <button class="tv-pair-btn" onclick="loadChart('GBPUSD',this)">GBP/USD</button>
@@ -384,8 +373,6 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
       <button class="tv-pair-btn" onclick="loadChart('AUDUSD',this)">AUD/USD</button>
       <button class="tv-pair-btn" onclick="loadChart('USDCAD',this)">USD/CAD</button>
     </div>
-
-    <!-- Timeframe tabs -->
     <div class="tv-tabs">
       <button class="tv-tab active" onclick="setTF('1',this)">1M</button>
       <button class="tv-tab" onclick="setTF('5',this)">5M</button>
@@ -395,19 +382,11 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
       <button class="tv-tab" onclick="setTF('D',this)">1D</button>
       <button class="tv-tab" onclick="setTF('W',this)">1W</button>
     </div>
-
-    <!-- Chart embed -->
-    <div class="tv-chart-wrap" id="tv-chart-container">
-      <!-- TradingView Widget BEGIN -->
-      <div class="tradingview-widget-container" style="height:500px;width:100%">
-        <div id="tradingview_chart" style="height:100%;width:100%;"></div>
-      </div>
-      <!-- TradingView Widget END -->
+  </div>
+  <div class="tv-chart-wrap">
+    <div class="tradingview-widget-container" style="height:500px;width:100%;">
+      <div id="tradingview_chart" style="height:100%;width:100%;"></div>
     </div>
-
-    <p style="text-align:center;margin-top:16px;font-family:var(--fm);font-size:10px;color:#8B949E;letter-spacing:.08em;">
-      POWERED BY <a href="https://www.tradingview.com/" style="color:#26a69a;" target="_blank">TRADINGVIEW</a> &nbsp;·&nbsp; REAL-TIME DATA &nbsp;·&nbsp; PROFESSIONAL GRADE CHARTS
-    </p>
   </div>
 </section>
 

@@ -399,19 +399,49 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
       <h2>Watch Us on YouTube</h2>
       <p class="lead" style="max-width:480px;margin:10px auto 0">Free trading content, market analysis, and course previews — all on our channel.</p>
     </div>
-    <div style="border-radius:var(--r16);overflow:hidden;border:1.5px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,.10);aspect-ratio:16/9;width:100%;">
-      <iframe
-        src="https://www.youtube.com/embed?listType=user_uploads&list=thelaststop-x1g&autoplay=0&rel=0&modestbranding=1"
-        style="width:100%;height:100%;border:none;display:block;"
-        allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        title="fxeye YouTube Channel">
-      </iframe>
-    </div>
-    <div style="text-align:center;margin-top:24px;">
-      <a href="https://youtube.com/@thelaststop-x1g?si=0qBSdjdXoNsa1Rzx" target="_blank" class="btn btn-dark" style="display:inline-flex;align-items:center;gap:10px;font-size:14px;padding:14px 28px;">
-        <i class="fa-brands fa-youtube" style="font-size:18px;color:#FF0000;"></i> Subscribe to Our Channel
-      </a>
+
+    <!-- Channel Card -->
+    <div style="max-width:600px;margin:0 auto;">
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--r16);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);">
+        
+        <!-- Channel Banner -->
+        <div style="background:linear-gradient(135deg,#FF0000,#CC0000);height:120px;display:flex;align-items:center;justify-content:center;position:relative;">
+          <i class="fa-brands fa-youtube" style="font-size:56px;color:rgba(255,255,255,0.2);position:absolute;right:24px;bottom:12px;"></i>
+          <div style="text-align:center;">
+            <div style="font-family:var(--fm);font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;">Official Channel</div>
+            <div style="font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.02em;">@thelaststop-x1g</div>
+          </div>
+        </div>
+
+        <!-- Channel Info -->
+        <div style="padding:24px 28px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#FF0000,#CC0000);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fa-brands fa-youtube" style="font-size:24px;color:#fff;"></i>
+            </div>
+            <div>
+              <div style="font-size:16px;font-weight:800;color:var(--ink);margin-bottom:2px;">The Last Stop</div>
+              <div style="font-size:12px;color:var(--muted);font-family:var(--fm);">Forex Trading · Content Creation · Finance</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);">
+              <i class="fa-solid fa-video" style="color:var(--purple);font-size:12px;"></i> Trading Videos
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);">
+              <i class="fa-solid fa-chart-line" style="color:var(--purple);font-size:12px;"></i> Market Analysis
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);">
+              <i class="fa-solid fa-graduation-cap" style="color:var(--purple);font-size:12px;"></i> Free Tutorials
+            </div>
+          </div>
+
+          <a href="https://youtube.com/@thelaststop-x1g" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#FF0000;color:#fff;font-weight:800;font-size:15px;padding:14px 24px;border-radius:var(--r8);text-decoration:none;transition:background .18s;width:100%;" onmouseover="this.style.background='#CC0000'" onmouseout="this.style.background='#FF0000'">
+            <i class="fa-brands fa-youtube" style="font-size:20px;"></i> Subscribe to Our Channel
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

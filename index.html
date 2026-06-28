@@ -66,17 +66,8 @@ h1{margin-bottom:16px;}
 .hero-video-col{position:relative;}
 .hero-video-wrap{width:100%;aspect-ratio:16/9;border-radius:var(--r16);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.12);background:#000;}
 .hero-video-wrap iframe{width:100%;height:100%;display:block;border:none;}
-
-/* ── ABOUT IMAGE — real size, no crop, no round ── */
 .about-grid{display:grid;grid-template-columns:280px 1fr;gap:52px;align-items:start;}
-.about-img{
-  width:100%;
-  display:block;
-  border-radius:var(--r16);
-  border:1px solid var(--border);
-  box-shadow:0 8px 32px rgba(0,0,0,.10);
-}
-
+.about-img{width:100%;display:block;border-radius:var(--r16);border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.10);}
 .about-body h2{margin-bottom:14px;}
 .about-body p{color:var(--muted);margin-bottom:12px;font-size:15px;}
 .check-list{list-style:none;margin:20px 0;}
@@ -91,6 +82,28 @@ h1{margin-bottom:16px;}
 .mod-list li{display:flex;align-items:center;gap:10px;padding:11px 24px;border-bottom:1px solid var(--border);font-size:13px;}
 .mod-list li:last-child{border-bottom:none;}
 .mod-list li i{color:var(--purple);font-size:9px;width:10px;flex-shrink:0;}
+
+/* ── TRADINGVIEW SECTION ── */
+#tradingview-section{background:#0D1117;padding:72px 0;}
+#tradingview-section .tag{background:rgba(38,166,154,.15);border-color:rgba(38,166,154,.4);color:#4DD0C4;}
+#tradingview-section h2{color:#E6EDF3;}
+#tradingview-section .lead{color:#8B949E;}
+.tv-chart-wrap{margin-top:40px;border-radius:var(--r12);overflow:hidden;border:1px solid #30363D;box-shadow:0 16px 48px rgba(0,0,0,.4);}
+.tv-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.tv-tab{font-family:var(--fm);font-size:11px;font-weight:600;padding:7px 16px;border-radius:4px;border:1px solid #30363D;background:transparent;color:#8B949E;cursor:pointer;transition:all .15s;letter-spacing:.06em;}
+.tv-tab.active{background:#26a69a;border-color:#26a69a;color:#fff;}
+.tv-tab:hover:not(.active){border-color:#8B949E;color:#E6EDF3;}
+.tv-pairs-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.tv-pair-btn{font-family:var(--fm);font-size:10px;font-weight:700;padding:5px 12px;border-radius:3px;border:1px solid #30363D;background:#161B22;color:#8B949E;cursor:pointer;transition:all .15s;letter-spacing:.08em;}
+.tv-pair-btn.active{background:#1e3a5f;border-color:#388bfd;color:#79c0ff;}
+.tv-pair-btn:hover:not(.active){border-color:#8B949E;color:#E6EDF3;}
+.tv-info-bar{display:flex;align-items:center;gap:20px;padding:14px 20px;background:#161B22;border:1px solid #30363D;border-radius:var(--r8);margin-bottom:16px;flex-wrap:wrap;}
+.tv-info-item{display:flex;flex-direction:column;gap:2px;}
+.tv-info-item .ti-label{font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;}
+.tv-info-item .ti-val{font-family:var(--fm);font-size:13px;font-weight:700;color:#E6EDF3;}
+.ti-green{color:#3FB950!important;}
+.ti-red{color:#F85149!important;}
+
 #bonus{background:#1A0A2E;color:var(--white);}
 #bonus .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#C4B5FD;}
 #bonus h2{color:var(--white);}
@@ -183,8 +196,6 @@ tbody tr:hover td{background:var(--surface);}
 .faq-item.open .faq-ico{background:var(--purple);border-color:var(--purple);color:var(--white);}
 .faq-ans{display:none;padding-bottom:16px;font-size:13px;color:var(--muted);line-height:1.8;}
 .faq-item.open .faq-ans{display:block;}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-.trust-item{padding:18px 20px;border:1.5px solid var(--border);border-radius:var(--r8);}
 footer{border-top:1px solid var(--border);padding:48px 0 24px;}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px;}
 .footer-desc{font-size:12px;color:var(--muted);line-height:1.7;}
@@ -197,57 +208,6 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
 .disc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r4);padding:12px 16px;font-size:11px;color:var(--muted);line-height:1.7;margin-top:24px;}
 .wa{position:fixed;bottom:90px;right:24px;z-index:90;width:50px;height:50px;border-radius:50%;background:#25D366;color:var(--white);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .18s;}
 .wa:hover{transform:scale(1.08);}
-.live-bot-section{padding:28px 0 8px;}
-.live-bot-wrap{display:flex;justify-content:center;}
-.btn-live-bot{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#DC2626,#B91C1C);color:var(--white);font-family:var(--fn);font-weight:800;font-size:15px;padding:18px 36px;border-radius:var(--r8);border:2px solid #DC2626;cursor:pointer;text-decoration:none;overflow:hidden;box-shadow:0 6px 24px rgba(220,38,38,.4);animation:livePulse 2s ease-in-out infinite,liveGlow 2.5s ease-in-out infinite;transition:all .18s;letter-spacing:.02em;}
-.btn-live-bot::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:shineLive 2.5s ease-in-out infinite;}
-.btn-live-bot:hover{background:linear-gradient(135deg,#EF4444,#DC2626);border-color:#EF4444;transform:translateY(-2px) scale(1.02);box-shadow:0 10px 36px rgba(220,38,38,.55);}
-.btn-live-bot .live-dot-red{width:10px;height:10px;background:#fff;border-radius:50%;animation:pulseWhite 1.2s infinite;flex-shrink:0;}
-@keyframes livePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-@keyframes liveGlow{0%,100%{box-shadow:0 6px 24px rgba(220,38,38,.4)}50%{box-shadow:0 8px 36px rgba(220,38,38,.7)}}
-@keyframes shineLive{0%{left:-100%}50%,100%{left:100%}}
-@keyframes pulseWhite{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-#live-dashboard{background:#0D1117;color:#E6EDF3;padding:60px 0;}
-#live-dashboard .tag{background:rgba(220,38,38,.2);border-color:rgba(220,38,38,.4);color:#FCA5A5;}
-#live-dashboard h2{color:#E6EDF3;}
-.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
-.dash-live-badge{display:flex;align-items:center;gap:8px;background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.4);padding:6px 14px;border-radius:4px;}
-.dash-live-badge .rdot{width:8px;height:8px;background:#EF4444;border-radius:50%;animation:pulse 1.2s infinite;}
-.dash-live-badge span{font-family:var(--fm);font-size:11px;color:#FCA5A5;font-weight:700;letter-spacing:.1em;}
-.dash-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
-.dash-stat{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:16px 18px;}
-.dash-stat .ds-label{font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:6px;}
-.dash-stat .ds-val{font-family:var(--fm);font-size:22px;font-weight:700;line-height:1;}
-.dash-stat .ds-chg{font-family:var(--fm);font-size:11px;font-weight:600;margin-top:4px;}
-.ds-pos{color:#3FB950;}
-.ds-neg{color:#F85149;}
-.chart-area{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:20px;margin-bottom:16px;}
-.chart-area .ca-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.chart-area .ca-title{font-family:var(--fm);font-size:12px;color:#E6EDF3;font-weight:600;}
-.chart-area .ca-pair{font-family:var(--fm);font-size:11px;color:#8B949E;}
-.chart-tabs{display:flex;gap:4px;}
-.chart-tab{font-family:var(--fm);font-size:10px;padding:4px 10px;border-radius:4px;border:1px solid #30363D;background:transparent;color:#8B949E;cursor:pointer;transition:all .15s;}
-.chart-tab.active{background:#238636;border-color:#238636;color:#fff;}
-#tradeChart{width:100%;height:200px;display:block;}
-.trades-table{background:#161B22;border:1px solid #30363D;border-radius:8px;overflow:hidden;}
-.trades-table table{width:100%;border-collapse:collapse;}
-.trades-table thead th{padding:10px 14px;text-align:left;font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #30363D;background:#0D1117;}
-.trades-table tbody td{padding:10px 14px;font-size:12px;font-family:var(--fm);border-bottom:1px solid #21262D;}
-.trades-table tbody tr:last-child td{border-bottom:none;}
-.trades-table tbody tr:hover td{background:#161B22;}
-.badge-win{background:rgba(63,185,80,.15);color:#3FB950;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
-.badge-loss{background:rgba(248,81,73,.15);color:#F85149;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
-.badge-open{background:rgba(210,153,34,.15);color:#D29922;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;}
-.bot-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
-.bot-sum-card{background:#161B22;border:1px solid #30363D;border-radius:8px;padding:18px;}
-.bot-sum-card h4{font-family:var(--fm);font-size:11px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
-.progress-bar-wrap{margin-bottom:10px;}
-.progress-bar-wrap .pb-label{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;color:#8B949E;margin-bottom:4px;}
-.progress-bar-wrap .pb-label span:last-child{color:#3FB950;font-weight:700;}
-.pb-track{height:6px;background:#21262D;border-radius:3px;overflow:hidden;}
-.pb-fill{height:100%;border-radius:3px;transition:width 1s ease;}
-.pb-green{background:linear-gradient(90deg,#238636,#3FB950);}
-.pb-red{background:linear-gradient(90deg,#B91C1C,#F85149);}
 #google-reviews{padding:72px 0;}
 #google-reviews .tag{color:var(--purple);}
 .reviews-slider-wrap{position:relative;overflow:hidden;margin-top:48px;padding:0 8px;}
@@ -301,8 +261,6 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   .who-grid{grid-template-columns:repeat(2,1fr);}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .benefits-grid{grid-template-columns:repeat(2,1fr);}
-  .dash-stats-row{grid-template-columns:repeat(2,1fr);}
-  .bot-summary{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   section{padding:44px 0;}
@@ -315,7 +273,6 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   .hero-btns .btn{width:100%;}
   .benefits-grid{grid-template-columns:1fr;max-width:320px;}
   .cta-buttons-row{flex-direction:column;align-items:center;}
-  .dash-stats-row{grid-template-columns:1fr 1fr;}
   .review-card{min-width:260px;max-width:260px;}
   .bottom-bar{padding:10px 14px;flex-direction:column;gap:8px;}
   .bottom-bar-left{width:100%;justify-content:space-between;}
@@ -323,9 +280,8 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   .bottom-bar-timer .tv{font-size:16px;}
   .bottom-bar-price .bp-now{font-size:15px;}
   .nav-logo{height:32px;}
-}
-@media(max-width:420px){
-  .dash-stats-row{grid-template-columns:1fr;}
+  .tv-tabs{gap:5px;}
+  .tv-tab{font-size:10px;padding:6px 10px;}
 }
 .wa{bottom:90px;}
 @media(max-width:600px){.wa{bottom:130px;}}
@@ -392,11 +348,10 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
 <section id="about" class="alt">
   <div class="wrap">
     <div class="about-grid">
-      <!-- ✅ FIX: No aspect-ratio, no object-fit:cover — photo shows in real/natural size -->
       <img src="https://i.ibb.co/rqvp8gC/file-0000000084587208bc30e1977c8d57cd.png" alt="fxeye Mentor" class="about-img">
       <div class="about-body">
         <span class="tag"><i class="fa-solid fa-user"></i> About the Mentor</span>
-        <h2>Hi, I'm Aatish Oberoi.</h2>
+        <h2>Hi, I'm Mr. C.</h2>
         <p>I spent years making mistakes, losing money, and restarting while learning Forex trading and content creation. When I finally cracked both, I decided to put everything into one structured program so you don't have to go through the same pain I did.</p>
         <p>Today I teach students across India how to build real income — not just hype, real results. 500+ students have gone through this program.</p>
         <ul class="check-list">
@@ -411,105 +366,48 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   </div>
 </section>
 
-<!-- LIVE AI BOT TRADING DASHBOARD -->
-<section id="live-dashboard">
+<!-- TRADINGVIEW LIVE CHART SECTION -->
+<section id="tradingview-section">
   <div class="wrap">
     <div class="tc" style="margin-bottom:36px;">
-      <span class="tag"><i class="fa-solid fa-robot"></i> AI Bot Live</span>
-      <h2>Live AI Bot Trading Dashboard</h2>
-      <p style="color:#8B949E;font-size:15px;margin-top:8px;">Real-time performance — updated automatically</p>
+      <span class="tag"><i class="fa-solid fa-chart-candlestick"></i> Live Markets</span>
+      <h2>Live Market Charts — Powered by TradingView</h2>
+      <p class="lead" style="color:#8B949E;margin-top:8px;">Real-time Forex charts. The exact charts used in the course.</p>
     </div>
-    <div class="dash-header">
-      <div class="dash-live-badge">
-        <div class="rdot"></div>
-        <span>LIVE</span>
-      </div>
-      <div style="font-family:var(--fm);font-size:11px;color:#8B949E;" id="live-clock">--:--:-- IST</div>
+
+    <!-- Pair selector tabs -->
+    <div class="tv-pairs-row">
+      <button class="tv-pair-btn active" onclick="loadChart('EURUSD',this)">EUR/USD</button>
+      <button class="tv-pair-btn" onclick="loadChart('GBPUSD',this)">GBP/USD</button>
+      <button class="tv-pair-btn" onclick="loadChart('USDJPY',this)">USD/JPY</button>
+      <button class="tv-pair-btn" onclick="loadChart('XAUUSD',this)">XAU/USD</button>
+      <button class="tv-pair-btn" onclick="loadChart('AUDUSD',this)">AUD/USD</button>
+      <button class="tv-pair-btn" onclick="loadChart('USDCAD',this)">USD/CAD</button>
     </div>
-    <div class="dash-stats-row">
-      <div class="dash-stat">
-        <div class="ds-label">Today's P&L</div>
-        <div class="ds-val ds-pos" id="stat-pnl">+$284.50</div>
-        <div class="ds-chg ds-pos"><i class="fa-solid fa-arrow-trend-up"></i> +3.8% today</div>
-      </div>
-      <div class="dash-stat">
-        <div class="ds-label">Win Rate</div>
-        <div class="ds-val ds-pos" id="stat-wr">73.4%</div>
-        <div class="ds-chg" style="color:#8B949E;">Last 30 days</div>
-      </div>
-      <div class="dash-stat">
-        <div class="ds-label">Open Trades</div>
-        <div class="ds-val" style="color:#D29922;" id="stat-open">3</div>
-        <div class="ds-chg" style="color:#8B949E;">Active positions</div>
-      </div>
-      <div class="dash-stat">
-        <div class="ds-label">Total Profit</div>
-        <div class="ds-val ds-pos">+$12,840</div>
-        <div class="ds-chg" style="color:#8B949E;">Since Jan 2026</div>
-      </div>
+
+    <!-- Timeframe tabs -->
+    <div class="tv-tabs">
+      <button class="tv-tab active" onclick="setTF('1',this)">1M</button>
+      <button class="tv-tab" onclick="setTF('5',this)">5M</button>
+      <button class="tv-tab" onclick="setTF('15',this)">15M</button>
+      <button class="tv-tab" onclick="setTF('60',this)">1H</button>
+      <button class="tv-tab" onclick="setTF('240',this)">4H</button>
+      <button class="tv-tab" onclick="setTF('D',this)">1D</button>
+      <button class="tv-tab" onclick="setTF('W',this)">1W</button>
     </div>
-    <div class="chart-area">
-      <div class="ca-header">
-        <div>
-          <div class="ca-title">EUR/USD — Equity Curve</div>
-          <div class="ca-pair" id="live-price">1.08432 &nbsp;<span style="color:#3FB950;">▲ +0.0024</span></div>
-        </div>
-        <div class="chart-tabs">
-          <button class="chart-tab active" onclick="setTab(this,'1D')">1D</button>
-          <button class="chart-tab" onclick="setTab(this,'1W')">1W</button>
-          <button class="chart-tab" onclick="setTab(this,'1M')">1M</button>
-        </div>
+
+    <!-- Chart embed -->
+    <div class="tv-chart-wrap" id="tv-chart-container">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container" style="height:500px;width:100%">
+        <div id="tradingview_chart" style="height:100%;width:100%;"></div>
       </div>
-      <canvas id="tradeChart"></canvas>
+      <!-- TradingView Widget END -->
     </div>
-    <div class="trades-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Pair</th><th>Type</th><th>Entry</th><th>Exit / SL</th><th>P&L</th><th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="trades-body"></tbody>
-      </table>
-    </div>
-    <div class="bot-summary">
-      <div class="bot-sum-card">
-        <h4>Performance Breakdown</h4>
-        <div class="progress-bar-wrap">
-          <div class="pb-label"><span>Win Trades</span><span>73%</span></div>
-          <div class="pb-track"><div class="pb-fill pb-green" style="width:73%"></div></div>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="pb-label"><span>Loss Trades</span><span style="color:#F85149;">27%</span></div>
-          <div class="pb-track"><div class="pb-fill pb-red" style="width:27%"></div></div>
-        </div>
-        <div class="progress-bar-wrap">
-          <div class="pb-label"><span>Risk/Reward</span><span>1:2.4</span></div>
-          <div class="pb-track"><div class="pb-fill pb-green" style="width:83%"></div></div>
-        </div>
-      </div>
-      <div class="bot-sum-card">
-        <h4>Bot Stats — This Month</h4>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px;">
-          <div>
-            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Total Trades</div>
-            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#E6EDF3;" id="stat-trades">148</div>
-          </div>
-          <div>
-            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Avg Profit</div>
-            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#3FB950;">$86.7</div>
-          </div>
-          <div>
-            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Max Drawdown</div>
-            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#F85149;">-4.2%</div>
-          </div>
-          <div>
-            <div style="font-family:var(--fm);font-size:9px;color:#8B949E;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Sharpe Ratio</div>
-            <div style="font-family:var(--fm);font-size:22px;font-weight:700;color:#E6EDF3;">2.18</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <p style="text-align:center;margin-top:16px;font-family:var(--fm);font-size:10px;color:#8B949E;letter-spacing:.08em;">
+      POWERED BY <a href="https://www.tradingview.com/" style="color:#26a69a;" target="_blank">TRADINGVIEW</a> &nbsp;·&nbsp; REAL-TIME DATA &nbsp;·&nbsp; PROFESSIONAL GRADE CHARTS
+    </p>
   </div>
 </section>
 
@@ -633,7 +531,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
       <p class="lead" style="max-width:420px;margin:10px auto 0">Join our platforms for live updates, signals, and community support.</p>
     </div>
     <div class="cta-buttons-row">
-      <a href="#" class="btn-tradingview"><i class="fa-solid fa-chart-candlestick"></i> TradingView</a>
+      <a href="https://www.tradingview.com/" class="btn-tradingview"><i class="fa-solid fa-chart-candlestick"></i> TradingView</a>
       <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       <a href="#" class="btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
     </div>
@@ -820,7 +718,71 @@ footer{border-top:1px solid var(--border);padding:48px 0 24px;}
   <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="bottom-bar-btn"><i class="fa-solid fa-lock" style="font-size:11px"></i> Enroll Now</a>
 </div>
 
+<!-- TradingView Widget Script -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
 <script>
+/* ── TRADINGVIEW CHART ── */
+var tvWidget = null;
+var currentSymbol = 'EURUSD';
+var currentInterval = '1';
+
+function initChart(symbol, interval) {
+  var container = document.getElementById('tradingview_chart');
+  container.innerHTML = '';
+  if (tvWidget) {
+    try { tvWidget.remove(); } catch(e) {}
+    tvWidget = null;
+  }
+  tvWidget = new TradingView.widget({
+    autosize: true,
+    symbol: 'FX:' + symbol,
+    interval: interval,
+    timezone: 'Asia/Kolkata',
+    theme: 'dark',
+    style: '1',
+    locale: 'en',
+    toolbar_bg: '#0D1117',
+    enable_publishing: false,
+    allow_symbol_change: true,
+    container_id: 'tradingview_chart',
+    hide_side_toolbar: false,
+    withdateranges: true,
+    show_popup_button: true,
+    popup_width: '1000',
+    popup_height: '650',
+    save_image: false,
+    studies: ['RSI@tv-basicstudies', 'MASimple@tv-basicstudies'],
+    overrides: {
+      'paneProperties.background': '#0D1117',
+      'paneProperties.vertGridProperties.color': '#1C2128',
+      'paneProperties.horzGridProperties.color': '#1C2128',
+      'scalesProperties.textColor': '#8B949E',
+    }
+  });
+}
+
+function loadChart(symbol, btn) {
+  currentSymbol = symbol;
+  document.querySelectorAll('.tv-pair-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  initChart(symbol, currentInterval);
+}
+
+function setTF(interval, btn) {
+  currentInterval = interval;
+  document.querySelectorAll('.tv-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  initChart(currentSymbol, interval);
+}
+
+/* Init on load */
+window.addEventListener('load', function() {
+  if (typeof TradingView !== 'undefined') {
+    initChart('EURUSD', '1');
+  }
+});
+
 /* ── COUNTDOWN ── */
 (function(){
   const KEY='fxeye_dl_v2';
@@ -863,140 +825,16 @@ const imgs=['https://i.ibb.co/FLYkdfwz/1.jpg','https://i.ibb.co/s9np0rXH/2.jpg',
 const row1=document.getElementById('row1');
 if(row1){[...imgs,...imgs].forEach(src=>{const d=document.createElement('div');d.className='tcard';d.innerHTML=`<img src="${src}" alt="Student" loading="lazy"/>`;row1.appendChild(d);});}
 
-/* ── LIVE CLOCK ── */
-function updateClock(){
-  const now=new Date();
-  const ist=new Date(now.getTime()+5.5*3600000);
-  const h=String(ist.getUTCHours()).padStart(2,'0');
-  const m=String(ist.getUTCMinutes()).padStart(2,'0');
-  const s=String(ist.getUTCSeconds()).padStart(2,'0');
-  const el=document.getElementById('live-clock');
-  if(el)el.textContent=`${h}:${m}:${s} IST`;
-}
-setInterval(updateClock,1000);updateClock();
-
-/* ── LIVE PRICE TICKER ── */
-let basePrice=1.08432;
-function tickPrice(){
-  basePrice+=((Math.random()-0.499)*0.0003);
-  basePrice=Math.max(1.0780,Math.min(1.0920,basePrice));
-  const el=document.getElementById('live-price');
-  if(el){
-    const change=(basePrice-1.08432);
-    const col=change>=0?'#3FB950':'#F85149';
-    const arrow=change>=0?'▲':'▼';
-    el.innerHTML=`${basePrice.toFixed(5)} &nbsp;<span style="color:${col};">${arrow} ${Math.abs(change).toFixed(4)}</span>`;
-  }
-}
-setInterval(tickPrice,2200);
-
-/* ── LIVE P&L TICKER ── */
-let pnl=284.50;
-function tickPnl(){
-  pnl+=(Math.random()-0.42)*8;
-  pnl=Math.max(180,Math.min(450,pnl));
-  const el=document.getElementById('stat-pnl');
-  if(el){el.textContent=`+$${pnl.toFixed(2)}`;el.className='ds-val ds-pos';}
-}
-setInterval(tickPnl,3500);
-
-/* ── TRADE TABLE ── */
-const tradeData=[
-  {pair:'EUR/USD',type:'BUY',entry:'1.08210',exit:'1.08440',pnl:'+$115.20',status:'win'},
-  {pair:'GBP/USD',type:'SELL',entry:'1.27340',exit:'1.27110',pnl:'+$92.80',status:'win'},
-  {pair:'USD/JPY',type:'BUY',entry:'158.720',exit:'—',pnl:'+$44.60',status:'open'},
-  {pair:'XAU/USD',type:'SELL',entry:'2341.50',exit:'2328.90',pnl:'+$63.00',status:'win'},
-  {pair:'EUR/GBP',type:'BUY',entry:'0.85120',exit:'0.84980',pnl:'-$28.40',status:'loss'},
-  {pair:'AUD/USD',type:'BUY',entry:'0.65430',exit:'—',pnl:'+$12.20',status:'open'},
-];
-const tbody=document.getElementById('trades-body');
-if(tbody){
-  tradeData.forEach(t=>{
-    const badge=t.status==='win'?'badge-win':t.status==='loss'?'badge-loss':'badge-open';
-    const label=t.status==='win'?'WIN':t.status==='loss'?'LOSS':'OPEN';
-    const pnlCol=t.pnl.startsWith('+')?'color:#3FB950':'color:#F85149';
-    tbody.innerHTML+=`<tr>
-      <td style="color:#E6EDF3;font-weight:700;">${t.pair}</td>
-      <td style="color:${t.type==='BUY'?'#3FB950':'#F85149'};font-weight:700;">${t.type}</td>
-      <td>${t.entry}</td>
-      <td>${t.exit}</td>
-      <td style="${pnlCol};font-weight:700;">${t.pnl}</td>
-      <td><span class="${badge}">${label}</span></td>
-    </tr>`;
-  });
-}
-
-/* ── CHART ── */
-function drawChart(tab){
-  const canvas=document.getElementById('tradeChart');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
-  canvas.width=canvas.offsetWidth||800;
-  canvas.height=200;
-  const W=canvas.width,H=canvas.height;
-  let points;
-  if(tab==='1D'){
-    points=[100,112,108,118,115,125,120,132,128,138,135,142,140,148,145,155,150,158,155,162,160,168,165,172];
-  } else if(tab==='1W'){
-    points=[80,85,90,88,95,100,98,108,105,115,112,120,118,128,125,135,130,140,138,145,142,150,148,155];
-  } else {
-    points=[50,55,60,58,65,70,68,75,80,85,82,90,95,100,98,108,110,115,112,120,125,130,128,138,140,145];
-  }
-  const min=Math.min(...points)-5,max=Math.max(...points)+5;
-  const scaleY=v=>H-((v-min)/(max-min))*(H*0.85)-H*0.07;
-  const scaleX=i=>(i/(points.length-1))*W;
-  ctx.clearRect(0,0,W,H);
-  ctx.strokeStyle='rgba(48,54,61,0.8)';
-  ctx.lineWidth=1;
-  for(let i=0;i<4;i++){
-    const y=H*0.07+i*(H*0.85/3);
-    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
-  }
-  const grad=ctx.createLinearGradient(0,0,0,H);
-  grad.addColorStop(0,'rgba(63,185,80,0.3)');
-  grad.addColorStop(1,'rgba(63,185,80,0)');
-  ctx.beginPath();
-  ctx.moveTo(scaleX(0),H);
-  points.forEach((v,i)=>ctx.lineTo(scaleX(i),scaleY(v)));
-  ctx.lineTo(scaleX(points.length-1),H);
-  ctx.closePath();
-  ctx.fillStyle=grad;
-  ctx.fill();
-  ctx.beginPath();
-  ctx.strokeStyle='#3FB950';
-  ctx.lineWidth=2.5;
-  ctx.lineJoin='round';
-  ctx.lineCap='round';
-  points.forEach((v,i)=>{i===0?ctx.moveTo(scaleX(i),scaleY(v)):ctx.lineTo(scaleX(i),scaleY(v));});
-  ctx.stroke();
-  const lx=scaleX(points.length-1),ly=scaleY(points[points.length-1]);
-  ctx.beginPath();ctx.arc(lx,ly,5,0,Math.PI*2);
-  ctx.fillStyle='#3FB950';ctx.fill();
-  ctx.strokeStyle='#0D1117';ctx.lineWidth=2;ctx.stroke();
-}
-
-function setTab(btn,tab){
-  document.querySelectorAll('.chart-tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  drawChart(tab);
-}
-
-window.addEventListener('load',()=>drawChart('1D'));
-window.addEventListener('resize',()=>{
-  const activeTab=document.querySelector('.chart-tab.active');
-  drawChart(activeTab?activeTab.textContent:'1D');
-});
-
 /* ── GOOGLE REVIEWS ── */
 const reviews=[
-  {name:'Rahul Sharma',loc:'Delhi',date:'2 weeks ago',rating:5,color:'#6D28D9',text:'Aatish bhai ka course ekdum mast hai! Maine 45 din mein pehli profitable trade ki. Content creation module bhi bahut useful hai. Paise wasool!'},
+  {name:'Rahul Sharma',loc:'Delhi',date:'2 weeks ago',rating:5,color:'#6D28D9',text:'Mr. C ka course ekdum mast hai! Maine 45 din mein pehli profitable trade ki. Content creation module bhi bahut useful hai. Paise wasool!'},
   {name:'Priya Nair',loc:'Kerala',date:'1 month ago',rating:5,color:'#DC2626',text:'Sach mein bahut achha course hai. Maine Forex ke baare mein kuch nahi jaanta tha. Ab main daily analysis kar sakti hoon. AI bot bhi kaam kar raha hai!'},
   {name:'Vikram Singh',loc:'Jaipur',date:'3 weeks ago',rating:5,color:'#16A34A',text:'5 stars dene ka mann hai 10 stars deta! Trading psychology wala module ne mujhe bahut help ki. Loss hona band ho gaya almost. Highly recommend!'},
   {name:'Anjali Mehta',loc:'Mumbai',date:'1 month ago',rating:5,color:'#EA580C',text:'Content creation + forex dono ek saath seekhna ka idea genius hai. Ab mera Instagram grow bhi ho raha hai aur trading se bhi kamaai ho rahi hai.'},
-  {name:'Suresh Patel',loc:'Ahmedabad',date:'2 months ago',rating:5,color:'#0891B2',text:'Bahut hi detailed course. Aatish bhai explain karte hain bahut clearly. WhatsApp group mein bhi support milta hai. Worth it definitely.'},
+  {name:'Suresh Patel',loc:'Ahmedabad',date:'2 months ago',rating:5,color:'#0891B2',text:'Bahut hi detailed course. Mr. C explain karte hain bahut clearly. WhatsApp group mein bhi support milta hai. Worth it definitely.'},
   {name:'Meena Krishnan',loc:'Chennai',date:'3 weeks ago',rating:4,color:'#7C3AED',text:'Course content bahut accha hai. Thoda aur live sessions hote toh aur achha hota. But overall mai satisfied hoon. Trading seekhna easy ho gaya.'},
   {name:'Deepak Yadav',loc:'Lucknow',date:'5 weeks ago',rating:5,color:'#BE185D',text:'Maine bohot courses kiye hai lekin ye sabse practical hai. Real trade examples se samajhna aasan ho gaya. AI bot ka result bhi dekh ke khushi hoti hai.'},
-  {name:'Riya Kapoor',loc:'Pune',date:'1 month ago',rating:5,color:'#059669',text:'Homemaker hoon aur ghar se hi trading sikh liya. Aatish bhai bahut patience se samjhate hain. Recommend karungi sab logo ko!'},
+  {name:'Riya Kapoor',loc:'Pune',date:'1 month ago',rating:5,color:'#059669',text:'Homemaker hoon aur ghar se hi trading sikh liya. Mr. C bahut patience se samjhate hain. Recommend karungi sab logo ko!'},
   {name:'Arjun Reddy',loc:'Hyderabad',date:'2 weeks ago',rating:5,color:'#B45309',text:'Risk management wala module game changer hai. Pehle bahut loss hota tha, ab managed trades kar raha hoon. AI bot bhi impressive results de raha hai.'},
 ];
 

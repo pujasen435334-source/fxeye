@@ -75,13 +75,13 @@ h4{font-family:var(--fn);font-size:15px;font-weight:700;}
   font-size:15px;padding:15px 28px;border-radius:var(--r-sm);border:1px solid transparent;cursor:pointer;
   transition:all .2s cubic-bezier(.2,.8,.2,1);letter-spacing:-.01em;white-space:nowrap;
 }
-.btn-primary{background:var(--grad-bull);color:#05221A;border-color:transparent;box-shadow:0 4px 24px rgba(0,217,163,.25);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,217,163,.4);}
+.btn-primary{background:var(--grad-bull);color:#05221A;border-color:transparent;}
+.btn-primary:hover{transform:translateY(-2px);}
 .btn-ghost{background:var(--glass);color:var(--ink);border-color:var(--border);font-size:14px;padding:13px 22px;backdrop-filter:blur(10px);}
 .btn-ghost:hover{border-color:var(--border-hi);background:var(--glass-hi);}
-.btn-cta{background:var(--grad-bull);color:#05221A;border-color:transparent;font-size:17px;font-weight:800;padding:18px 36px;width:100%;box-shadow:0 6px 30px rgba(0,217,163,.3);}
-.btn-cta:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(0,217,163,.45);}
-.btn-cta-sm{background:var(--grad-bull);color:#05221A;border-color:transparent;font-size:15px;font-weight:700;padding:14px 24px;box-shadow:0 4px 20px rgba(0,217,163,.25);}
+.btn-cta{background:var(--grad-bull);color:#05221A;border-color:transparent;font-size:17px;font-weight:800;padding:18px 36px;width:100%);}
+.btn-cta:hover{transform:translateY(-2px);}
+.btn-cta-sm{background:var(--grad-bull);color:#05221A;border-color:transparent;font-size:15px;font-weight:700;padding:14px 24px;}
 .btn-cta-sm:hover{transform:translateY(-2px);}
 .nav .btn-primary{font-size:12px;padding:9px 17px;gap:6px;}
 
@@ -171,19 +171,31 @@ h1{margin-bottom:18px;}
 .tcard:hover img{transform:scale(1.07);}
 .tcard::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4) 0%,transparent 60%);}
 
-.cmp-wrap{margin-top:50px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;overflow-x:auto;background:var(--glass);backdrop-filter:blur(14px);}
-table{width:100%;border-collapse:collapse;min-width:520px;}
-thead th{padding:14px 20px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);font-family:var(--fm);color:var(--muted);}
+.cmp-wrap{margin-top:50px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--glass);backdrop-filter:blur(14px);}
+table{width:100%;border-collapse:collapse;}
+thead th{padding:14px 16px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);font-family:var(--fm);color:var(--muted);}
 thead th:nth-child(2){color:var(--bear);}
 thead th:nth-child(3){color:var(--bull);}
 tbody tr{border-bottom:1px solid var(--border);}
 tbody tr:last-child{border-bottom:none;}
-tbody td{padding:13px 20px;font-size:13.5px;}
-tbody td:first-child{font-weight:600;}
-tbody td:nth-child(2){color:var(--muted-dim);}
+tbody td{padding:13px 16px;font-size:13px;vertical-align:top;word-break:break-word;}
+tbody td:first-child{font-weight:600;white-space:nowrap;width:28%;}
+tbody td:nth-child(2){color:var(--muted-dim);width:36%;}
+tbody td:nth-child(3){width:36%;}
 tbody tr:hover td{background:rgba(255,255,255,.025);}
 .xc{color:var(--bear)!important;font-weight:400!important;}
 .oc{color:var(--bull)!important;font-weight:600!important;}
+@media(max-width:600px){
+  table{display:block;}
+  thead{display:none;}
+  tbody{display:block;width:100%;}
+  tbody tr{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);position:relative;padding:0;}
+  tbody tr:last-child{border-bottom:none;}
+  tbody td{display:block;padding:10px 14px;font-size:12px;border:none;}
+  tbody td:first-child{grid-column:1/-1;background:rgba(255,255,255,.04);font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:8px 14px;border-bottom:1px solid var(--border);}
+  tbody td:nth-child(2)::before{content:'❌ ';font-size:11px;}
+  tbody td:nth-child(3)::before{content:'✅ ';font-size:11px;}
+}
 
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px;}
 .who-card{padding:24px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--glass);transition:all .2s;}
@@ -300,8 +312,8 @@ footer{border-top:1px solid var(--border);padding:54px 0 26px;}
 .bottom-bar-price{display:flex;align-items:center;gap:8px;}
 .bottom-bar-price .bp-was{font-size:13px;color:var(--muted-dim);text-decoration:line-through;}
 .bottom-bar-price .bp-now{font-size:19px;font-weight:800;color:var(--ink);font-family:var(--fd);}
-.bottom-bar-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--grad-bull);color:#05221A;font-family:var(--fn);font-weight:800;font-size:14px;padding:14px 28px;border-radius:var(--r-sm);border:none;cursor:pointer;text-decoration:none;overflow:hidden;box-shadow:0 6px 24px rgba(0,217,163,.35);transition:all .2s;}
-.bottom-bar-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,217,163,.5);}
+.bottom-bar-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--grad-bull);color:#05221A;font-family:var(--fn);font-weight:800;font-size:14px;padding:14px 28px;border-radius:var(--r-sm);border:none;cursor:pointer;text-decoration:none;transition:all .2s;}
+.bottom-bar-btn:hover{transform:translateY(-2px);}
 
 @media(max-width:900px){
   section{padding:64px 0;}
@@ -343,7 +355,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 26px;}
 <body>
 
 <div class="ann">
-  <i class=" "></i> Launch price is live<span class="chip" id="ann-timer">00:00:00</span> &nbsp;·&nbsp; Only <strong id="seats-top" style="color:var(--bull);">12</strong> seats left
+  <i class="fa-solid fa-bolt" style="color:var(--gold);"></i> Launch price is live — <span class="chip" id="ann-timer">00:00:00</span> &nbsp;·&nbsp; Only <strong id="seats-top" style="color:var(--bull);">12</strong> seats left
 </div>
 
 <nav class="nav">

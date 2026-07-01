@@ -22,31 +22,29 @@
   --fm:'JetBrains Mono',monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--fn);}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--fn);}
 
 /* ── TOP NAV ── */
 .topbar{
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 28px;border-bottom:1px solid var(--border);
 }
-.topbar-brand{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--ink);}
-.topbar-brand span{color:var(--bull);}
 .back-btn{
   display:inline-flex;align-items:center;gap:7px;
   font-size:13px;font-weight:600;color:var(--muted);
   text-decoration:none;transition:color .18s;
 }
-.back-btn:hover{color:var(--bull);}
+.back-btn:hover{color:#6D28D9;}
 
 /* ── PAGE BODY ── */
-.page{max-width:560px;margin:60px auto;padding:0 20px 60px;}
+.page{max-width:520px;margin:48px auto 0;padding:0 20px;}
 
-.page-heading{margin-bottom:36px;}
-.page-heading h1{font-family:var(--fd);font-size:30px;font-weight:700;letter-spacing:-0.025em;margin-bottom:8px;}
-.page-heading p{font-size:14px;color:var(--muted);line-height:1.75;}
+.page-heading{margin-bottom:24px;}
+.page-heading h1{font-family:var(--fd);font-size:26px;font-weight:700;letter-spacing:-0.025em;margin-bottom:6px;}
+.page-heading p{font-size:13px;color:var(--muted);line-height:1.7;}
 
 /* ── FIELDS ── */
-.field{margin-bottom:22px;}
+.field{margin-bottom:16px;}
 .field label{
   display:block;font-size:11.5px;font-weight:700;
   color:var(--muted);font-family:var(--fm);
@@ -71,13 +69,13 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:var(
 /* ── SUBMIT ── */
 .submit-btn{
   width:100%;padding:16px;border-radius:var(--r);border:none;
-  background:var(--grad-bull);color:#05221A;
+  background:#6D28D9;color:#fff;
   font-family:var(--fn);font-size:16px;font-weight:800;
   cursor:pointer;transition:opacity .18s,transform .18s;
   display:flex;align-items:center;justify-content:center;gap:10px;
   margin-top:8px;
 }
-.submit-btn:hover{opacity:.9;transform:translateY(-1px);}
+.submit-btn:hover{background:#5B21B6;transform:translateY(-1px);}
 .submit-btn:active{transform:scale(.99);}
 
 /* ── SUCCESS ── */
@@ -93,7 +91,7 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:var(
 .success-box p{font-size:14px;color:var(--muted);line-height:1.75;}
 
 /* ── DIVIDER ── */
-.divider{height:1px;background:var(--border);margin:32px 0;}
+.divider{height:1px;background:var(--border);margin:20px 0;}
 </style>
 </head>
 <body>

@@ -441,6 +441,74 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
 .inq-float:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0px 0px var(--ink-dark);background:var(--yellow-sun);}
 .inq-float i{color:var(--pink-neon);font-size:14px;}
 @media(max-width:600px){.inq-float{bottom:150px;left:12px;font-size:12px;padding:9px 13px;}}
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);will-change:opacity,transform;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.92) translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal-scale.in-view{opacity:1;transform:scale(1) translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-scale{opacity:1!important;transform:none!important;transition:none!important;}
+}
+
+/* ---------- HERO ENTRANCE ---------- */
+.hero-anim{opacity:0;transform:translateY(22px);animation:heroUp .9s cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes heroUp{to{opacity:1;transform:translateY(0);}}
+
+/* ---------- MODERN PUZZLE BOX DROP (highlighted words) ---------- */
+.hi{
+  position:relative;overflow:hidden;
+  opacity:0;filter:blur(6px);
+  transform:translateY(-100px) rotate(-20deg) scale(.35);
+  transform-origin:top center;
+  animation:boxDropModern .95s cubic-bezier(.22,1,.36,1) .55s forwards,
+            hangSwing 3.6s ease-in-out 1.5s infinite;
+}
+.hi::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(100deg,transparent 25%,rgba(255,255,255,.8) 48%,transparent 65%);
+  transform:translateX(-140%);
+  animation:shineSweep 1.15s ease 1.6s 1;
+}
+@keyframes boxDropModern{
+  0%{opacity:0;filter:blur(6px);transform:translateY(-100px) rotate(-20deg) scale(.35);}
+  42%{opacity:1;filter:blur(0);}
+  55%{transform:translateY(10px) rotate(6deg) scale(1.12);}
+  68%{transform:translateY(-6px) rotate(-4deg) scale(.94);}
+  80%{transform:translateY(3px) rotate(2deg) scale(1.04);}
+  90%{transform:translateY(-1px) rotate(-1deg) scale(.99);}
+  100%{opacity:1;filter:blur(0);transform:translateY(0) rotate(-1.5deg) scale(1);}
+}
+@keyframes shineSweep{to{transform:translateX(140%);}}
+@keyframes hangSwing{
+  0%,100%{transform:translateY(0) rotate(-1.5deg);}
+  25%{transform:translateY(0) rotate(-4.5deg);}
+  50%{transform:translateY(0) rotate(1.5deg);}
+  75%{transform:translateY(0) rotate(-2.5deg);}
+}
+@media(prefers-reduced-motion:reduce){
+  .hi{opacity:1;filter:none;transform:rotate(-1.5deg);animation:none;}
+  .hi::after{display:none;}
+}
+
+/* ---------- STAT / CARD HOVER ---------- */
+.stat .n{transition:transform .3s ease;}
+.stat:hover .n{transform:scale(1.08);}
+.stat:hover{transform:translateY(-4px);box-shadow:5px 5px 0px 0px var(--ink-dark);}
+.stat{transition:transform .25s ease,box-shadow .25s ease;}
+
+/* ---------- NAV SCROLLED STATE ---------- */
+.nav{transition:box-shadow .3s ease;}
+.nav.scrolled{box-shadow:5px 5px 0px 0px var(--ink-dark);}
+
+/* ---------- BUTTON SHEEN ---------- */
+.btn,.btn-tradingview,.btn-whatsapp,.btn-telegram,.bottom-bar-btn{position:relative;overflow:hidden;}
+.btn::after,.btn-tradingview::after,.btn-whatsapp::after,.btn-telegram::after,.bottom-bar-btn::after{
+  content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(115deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-20deg);transition:left .6s ease;
+}
+.btn:hover::after,.btn-tradingview:hover::after,.btn-whatsapp:hover::after,.btn-telegram:hover::after,.bottom-bar-btn:hover::after{left:130%;}
 </style>
 <base target="_blank">
 </head>
@@ -468,13 +536,13 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="live-pill">
+        <div class="live-pill hero-anim" style="animation-delay:.05s;">
           <div class="live-dot"></div>
           <span>Batch 2026 — Enrollment is Now Open</span>
         </div>
-        <h1>Master <span class="hi">Forex Trading</span> &amp; Content Creation. Build income beyond your job.</h1>
-        <p class="hero-sub">One program, two skills — trading profits and content income growing together. Step-by-step from Day 1.</p>
-        <div class="hero-btns">
+        <h1 class="hero-anim" style="animation-delay:.15s;">Master <span class="hi">Forex Trading</span> &amp; Content Creation. Build income beyond your job.</h1>
+        <p class="hero-sub hero-anim" style="animation-delay:.28s;">One program, two skills — trading profits and content income growing together. Step-by-step from Day 1.</p>
+        <div class="hero-btns hero-anim" style="animation-delay:.4s;">
           <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="btn btn-cta-sm">
             <i class="fa-solid fa-lock" style="font-size:12px"></i> Secure Your Seat — &#x20B9;15,000
           </a>
@@ -482,13 +550,13 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
             View Curriculum <i class="fa-solid fa-arrow-down" style="font-size:11px"></i>
           </a>
         </div>
-        <div class="stats">
+        <div class="stats hero-anim" style="animation-delay:.52s;">
           <div class="stat"><span class="n">500+</span><span class="l">Students</span></div>
           <div class="stat"><span class="n">94%</span><span class="l">Completion</span></div>
           <div class="stat"><span class="n">5+ Yrs</span><span class="l">Experience</span></div>
         </div>
       </div>
-      <div class="hero-video-col">
+      <div class="hero-video-col hero-anim" style="animation-delay:.3s;">
         <div class="hero-video-wrap">
           <div class="ticker-chip tc-1"><div class="tc-pair">EUR/USD</div><div class="tc-val" style="color:var(--green-acid);"><i class="fa-solid fa-arrow-trend-up"></i> 1.0842</div></div>
           <div class="ticker-chip tc-2"><div class="tc-pair">GBP/JPY</div><div class="tc-val" style="color:var(--red-fire);"><i class="fa-solid fa-arrow-trend-down"></i> 188.31</div></div>
@@ -503,10 +571,10 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
 <section id="about">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-img-wrap">
+      <div class="about-img-wrap reveal-scale">
         <img src="https://i.ibb.co/rqvp8gC/file-0000000084587208bc30e1977c8d57cd.png" alt="fxeye Mentor" class="about-img">
       </div>
-      <div class="about-body">
+      <div class="about-body reveal">
         <span class="tag"><i class="fa-solid fa-user"></i> About the Mentor</span>
         <h2>Hi, I'm Mr. C.</h2>
         <p>I spent years making mistakes, losing money, and restarting while learning Forex trading and content creation. When I finally cracked both, I decided to put everything into one structured program so you don't have to go through the same pain I did.</p>
@@ -524,12 +592,12 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
 <!-- TRADINGVIEW LIVE CHART -->
 <section id="tradingview-section">
   <div class="wrap">
-    <div class="tc" style="margin-bottom:8px;">
+    <div class="tc reveal" style="margin-bottom:8px;">
       <span class="tag"><i class="fa-solid fa-chart-candlestick"></i> Live Market</span>
       <h2>Watch The Markets <span class="hi">In Real Time</span></h2>
       <p class="lead" style="max-width:480px;margin:10px auto 0">Same charts we trade with — live, embedded, right here on the page.</p>
     </div>
-    <div class="arcade-frame">
+    <div class="arcade-frame reveal-scale">
       <div class="arcade-topbar">
         <span class="arcade-dot red"></span><span class="arcade-dot yellow"></span><span class="arcade-dot green"></span>
         <span class="arcade-label">LIVE_MARKET.EXE</span>
@@ -551,7 +619,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Watch Us on YouTube</h2>
       <p class="lead" style="max-width:480px;margin:10px auto 0">Free trading content, market analysis, and course previews — all on our channel.</p>
     </div>
-    <div style="max-width:660px;margin:0 auto;">
+    <div style="max-width:660px;margin:0 auto;" class="reveal-scale">
       <div class="glass" style="overflow:hidden;background:var(--pink-dim);">
         <div style="padding:24px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
@@ -589,7 +657,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Join Us on Telegram</h2>
       <p class="lead" style="max-width:480px;margin:10px auto 0">Live trade signals, daily market updates, and direct mentor access — all in one group.</p>
     </div>
-    <div style="max-width:660px;margin:0 auto;">
+    <div style="max-width:660px;margin:0 auto;" class="reveal-scale">
       <div class="glass" style="overflow:hidden;background:var(--green-dim);">
         <div style="padding:24px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
@@ -632,7 +700,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <p class="lead" style="max-width:480px;margin:10px auto 0">Two complete skill tracks. One structured program. Designed to work together.</p>
     </div>
     <div class="cur-grid">
-      <div class="mod">
+      <div class="mod reveal">
         <div class="mod-head">
           <div class="mod-ico bull"><i class="fa-solid fa-chart-line"></i></div>
           <div><div class="ml">Module 01</div><h3>Forex Trading</h3></div>
@@ -646,7 +714,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
           <li><i class="fa-solid fa-circle-dot"></i> Trading Psychology & Discipline</li>
         </ul>
       </div>
-      <div class="mod">
+      <div class="mod reveal" style="transition-delay:.1s;">
         <div class="mod-head">
           <div class="mod-ico gold"><i class="fa-solid fa-video"></i></div>
           <div><div class="ml">Module 02</div><h3>Content Creation</h3></div>
@@ -669,7 +737,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
   <div class="wrap tc">
     <span class="tag gold"><i class="fa-solid fa-gift"></i> Exclusive Bonus</span>
     <h2>There's a bonus too. We won't reveal what it is yet.</h2>
-    <div class="bonus-card">
+    <div class="bonus-card reveal-scale">
       <h3>A Secret System — Value Over &#x20B9;25,000</h3>
       <p>This is only revealed after enrollment. It's a complete income system that our top students used to start earning within 30 days. And it's not available anywhere else — join today and get it for free.</p>
       <div class="bonus-tag">Revealed after payment — Worth &#x20B9;25,000+</div>
@@ -686,7 +754,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <span class="tag"><i class="fa-solid fa-tag"></i> Enrollment</span>
       <h2>One price. Everything included. Lifetime access.</h2>
     </div>
-    <div class="price-card">
+    <div class="price-card reveal-scale">
        <div class="price-head">
         <div class="price-row" style="justify-content:center;flex-direction:column;align-items:center;gap:4px;">
           <div style="font-size:13px;color:var(--muted-dim);text-decoration:line-through;margin-bottom:4px;font-weight:700;">&#x20B9;5,23,000</div>
@@ -708,7 +776,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
         <a href="https://superprofile.bio/course/c11fade9-33d8-4f7a-979b-773f02e6b374" class="btn btn-cta" style="width:auto;margin:0 auto;padding:16px 48px;"><i class="fa-solid fa-lock" style="font-size:14px"></i> Enroll Now</a>
        </div>
     </div>
-    <div class="value-breakdown">
+    <div class="value-breakdown reveal">
       <div class="value-breakdown-head"><h3><i class="fa-solid fa-receipt" style="color:var(--ink-dark);margin-right:6px;"></i> Total Value Breakdown</h3></div>
       <ul class="value-breakdown-list">
         <li><span class="val-label"><i class="fa-solid fa-chart-line"></i> Forex Trading Course</span><span class="val-amount">&#x20B9;50,000</span></li>
@@ -733,9 +801,9 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <p class="lead" style="max-width:480px;margin:10px auto 0">Everything you need to start trading and creating — all included.</p>
     </div>
     <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-ico"><i class="fa-solid fa-crown"></i></div><h4>FREE VIP Group Access</h4><p>Join our exclusive VIP community for signals, updates, and direct support.</p></div>
-      <div class="benefit-card"><div class="benefit-ico"><i class="fa-solid fa-arrow-trend-up"></i></div><h4>Binary Options Trading</h4><p>Complete Quotex trading module — strategies that work on real markets.</p></div>
-      <div class="benefit-card"><div class="benefit-ico"><i class="fa-solid fa-newspaper"></i></div><h4>Daily Analysis FREE</h4><p>Get daily market analysis and trade setups delivered every morning.</p></div>
+      <div class="benefit-card reveal"><div class="benefit-ico"><i class="fa-solid fa-crown"></i></div><h4>FREE VIP Group Access</h4><p>Join our exclusive VIP community for signals, updates, and direct support.</p></div>
+      <div class="benefit-card reveal" style="transition-delay:.08s;"><div class="benefit-ico"><i class="fa-solid fa-arrow-trend-up"></i></div><h4>Binary Options Trading</h4><p>Complete Quotex trading module — strategies that work on real markets.</p></div>
+      <div class="benefit-card reveal" style="transition-delay:.16s;"><div class="benefit-ico"><i class="fa-solid fa-newspaper"></i></div><h4>Daily Analysis FREE</h4><p>Get daily market analysis and trade setups delivered every morning.</p></div>
     </div>
   </div>
 </section>
@@ -750,7 +818,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Connect With Us</h2>
       <p class="lead" style="max-width:420px;margin:10px auto 0">Join our platforms for live updates, signals, and community support.</p>
     </div>
-    <div class="cta-buttons-row">
+    <div class="cta-buttons-row reveal">
       <a href="https://www.tradingview.com/" class="btn-tradingview"><i class="fa-solid fa-chart-candlestick"></i> TradingView</a>
       <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       <a href="#" class="btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -766,12 +834,12 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Built to Actually Work</h2>
     </div>
     <div class="feat-grid">
-      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-infinity"></i></div><h4>Lifetime Access</h4><p>Pay once. Access forever — future updates included for free.</p></div>
-      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-mobile-screen"></i></div><h4>Mobile Friendly</h4><p>Learn on phone, tablet, or laptop — any device.</p></div>
-      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-circle-play"></i></div><h4>Recorded Classes</h4><p>Watch on your schedule. Rewatch any session anytime.</p></div>
-      <div class="feat"><div class="feat-ico"><i class="fa-brands fa-whatsapp"></i></div><h4>Private Community</h4><p>WhatsApp group — active students and direct mentor access.</p></div>
-      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-arrows-rotate"></i></div><h4>Regular Updates</h4><p>Markets and platforms change — course content stays current.</p></div>
-      <div class="feat"><div class="feat-ico"><i class="fa-solid fa-file-arrow-down"></i></div><h4>Downloadable Resources</h4><p>PDFs, trading templates, checklists, editing presets — all yours.</p></div>
+      <div class="feat reveal"><div class="feat-ico"><i class="fa-solid fa-infinity"></i></div><h4>Lifetime Access</h4><p>Pay once. Access forever — future updates included for free.</p></div>
+      <div class="feat reveal" style="transition-delay:.05s;"><div class="feat-ico"><i class="fa-solid fa-mobile-screen"></i></div><h4>Mobile Friendly</h4><p>Learn on phone, tablet, or laptop — any device.</p></div>
+      <div class="feat reveal" style="transition-delay:.1s;"><div class="feat-ico"><i class="fa-solid fa-circle-play"></i></div><h4>Recorded Classes</h4><p>Watch on your schedule. Rewatch any session anytime.</p></div>
+      <div class="feat reveal" style="transition-delay:.05s;"><div class="feat-ico"><i class="fa-brands fa-whatsapp"></i></div><h4>Private Community</h4><p>WhatsApp group — active students and direct mentor access.</p></div>
+      <div class="feat reveal" style="transition-delay:.1s;"><div class="feat-ico"><i class="fa-solid fa-arrows-rotate"></i></div><h4>Regular Updates</h4><p>Markets and platforms change — course content stays current.</p></div>
+      <div class="feat reveal" style="transition-delay:.15s;"><div class="feat-ico"><i class="fa-solid fa-file-arrow-down"></i></div><h4>Downloadable Resources</h4><p>PDFs, trading templates, checklists, editing presets — all yours.</p></div>
     </div>
   </div>
 </section>
@@ -796,7 +864,7 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Verified Student Reviews</h2>
       <p class="lead" style="max-width:420px;margin:10px auto 0">Real reviews from real students — directly from Google.</p>
     </div>
-    <div class="reviews-rating-summary">
+    <div class="reviews-rating-summary reveal">
       <div class="rating-big">
         <div class="rb-num">4.9</div>
         <div class="rb-stars">
@@ -837,37 +905,37 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
         <div class="cmp-header-cell good"><i class="fa-solid fa-check"></i> &nbsp;This Program</div>
       </div>
       <div class="cmp-rows">
-        <div class="cmp-row">
+        <div class="cmp-row reveal">
           <div class="cmp-cell">Skills covered</div>
           <div class="cmp-cell bad">Trading or content — never both</div>
           <div class="cmp-cell good">Full trading + content creation</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.04s;">
           <div class="cmp-cell">Mentor access</div>
           <div class="cmp-cell bad">No support after payment</div>
           <div class="cmp-cell good">Community + direct mentor</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.08s;">
           <div class="cmp-cell">Training depth</div>
           <div class="cmp-cell bad">Overview level, no structure</div>
           <div class="cmp-cell good">Step-by-step complete roadmap</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.12s;">
           <div class="cmp-cell">AI Bot included</div>
           <div class="cmp-cell bad">Not available</div>
           <div class="cmp-cell good">FREE AI Bot — Value $4,500</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.16s;">
           <div class="cmp-cell">Bonus</div>
           <div class="cmp-cell bad">Nothing</div>
           <div class="cmp-cell good">Secret bonus — worth &#x20B9;25,000+</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.2s;">
           <div class="cmp-cell">Access period</div>
           <div class="cmp-cell bad">Expires</div>
           <div class="cmp-cell good">Lifetime + free updates</div>
         </div>
-        <div class="cmp-row">
+        <div class="cmp-row reveal" style="transition-delay:.24s;">
           <div class="cmp-cell">Student proof</div>
           <div class="cmp-cell bad">Someone else's screenshots</div>
           <div class="cmp-cell good">500+ verified students</div>
@@ -885,12 +953,12 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>This course is for you if...</h2>
     </div>
     <div class="who-grid">
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-graduation-cap"></i></div><h4>Students</h4><p>Earn while you study — no finance background needed.</p></div>
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-briefcase"></i></div><h4>Working Professionals</h4><p>Add a secondary income stream without quitting your job.</p></div>
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-store"></i></div><h4>Business Owners</h4><p>Diversify revenue with trading profits and content brand.</p></div>
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-seedling"></i></div><h4>Complete Beginners</h4><p>Zero experience required. We start from absolute scratch.</p></div>
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-laptop-code"></i></div><h4>Freelancers</h4><p>Add high-value skills and build a personal brand.</p></div>
-      <div class="who-card"><div class="who-ico"><i class="fa-solid fa-house-heart"></i></div><h4>Homemakers</h4><p>Earn from home, on your own schedule — fully flexible.</p></div>
+      <div class="who-card reveal"><div class="who-ico"><i class="fa-solid fa-graduation-cap"></i></div><h4>Students</h4><p>Earn while you study — no finance background needed.</p></div>
+      <div class="who-card reveal" style="transition-delay:.04s;"><div class="who-ico"><i class="fa-solid fa-briefcase"></i></div><h4>Working Professionals</h4><p>Add a secondary income stream without quitting your job.</p></div>
+      <div class="who-card reveal" style="transition-delay:.08s;"><div class="who-ico"><i class="fa-solid fa-store"></i></div><h4>Business Owners</h4><p>Diversify revenue with trading profits and content brand.</p></div>
+      <div class="who-card reveal" style="transition-delay:.12s;"><div class="who-ico"><i class="fa-solid fa-seedling"></i></div><h4>Complete Beginners</h4><p>Zero experience required. We start from absolute scratch.</p></div>
+      <div class="who-card reveal" style="transition-delay:.16s;"><div class="who-ico"><i class="fa-solid fa-laptop-code"></i></div><h4>Freelancers</h4><p>Add high-value skills and build a personal brand.</p></div>
+      <div class="who-card reveal" style="transition-delay:.2s;"><div class="who-ico"><i class="fa-solid fa-house-heart"></i></div><h4>Homemakers</h4><p>Earn from home, on your own schedule — fully flexible.</p></div>
     </div>
   </div>
 </section>
@@ -903,13 +971,13 @@ footer{border-top:3px solid var(--ink-dark);padding:56px 0 26px;background:var(-
       <h2>Common Questions</h2>
     </div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Can beginners join?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes — this program is designed from the ground up for beginners. No prior trading, content, or finance background is needed. We cover everything from zero.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How long until I see results?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">It depends on how much time you put in. Most students start seeing results within 30 to 60 days. Lifetime access means no pressure — learn at your own pace.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Do I get lifetime access?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes. Once you enroll, the content is yours forever. Future updates for both modules are also included for free — we add them regularly.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Can I access it on mobile?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Absolutely. The course is delivered via Google Drive — works on any device. No app download needed.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Is Forex trading legal in India?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes, Forex trading is legal in India through SEBI-regulated brokers and permitted currency pairs. We cover the legal framework and compliant strategies in the course.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">What is the refund policy?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">This is a digital product and access is delivered immediately after payment — so no refunds. Please read everything carefully before enrolling. Contact support@fxeye.com for any technical issues.</div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How do I access the course after payment?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">After successful payment, you'll get an access page with a Google Drive link. The same link is also sent to your registered email immediately.</div></div>
+      <div class="faq-item reveal"><button class="faq-btn" onclick="toggleFaq(this)">Can beginners join?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes — this program is designed from the ground up for beginners. No prior trading, content, or finance background is needed. We cover everything from zero.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.03s;"><button class="faq-btn" onclick="toggleFaq(this)">How long until I see results?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">It depends on how much time you put in. Most students start seeing results within 30 to 60 days. Lifetime access means no pressure — learn at your own pace.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.06s;"><button class="faq-btn" onclick="toggleFaq(this)">Do I get lifetime access?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes. Once you enroll, the content is yours forever. Future updates for both modules are also included for free — we add them regularly.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.09s;"><button class="faq-btn" onclick="toggleFaq(this)">Can I access it on mobile?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Absolutely. The course is delivered via Google Drive — works on any device. No app download needed.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.12s;"><button class="faq-btn" onclick="toggleFaq(this)">Is Forex trading legal in India?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">Yes, Forex trading is legal in India through SEBI-regulated brokers and permitted currency pairs. We cover the legal framework and compliant strategies in the course.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.15s;"><button class="faq-btn" onclick="toggleFaq(this)">What is the refund policy?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">This is a digital product and access is delivered immediately after payment — so no refunds. Please read everything carefully before enrolling. Contact support@fxeye.com for any technical issues.</div></div>
+      <div class="faq-item reveal" style="transition-delay:.18s;"><button class="faq-btn" onclick="toggleFaq(this)">How do I access the course after payment?<span class="faq-ico"><i class="fa-solid fa-plus"></i></span></button><div class="faq-ans">After successful payment, you'll get an access page with a Google Drive link. The same link is also sent to your registered email immediately.</div></div>
     </div>
   </div>
 </section>
@@ -1093,5 +1161,71 @@ setInterval(()=>{
   currentReview=currentReview>=maxIdx?0:currentReview+1;
   goToReview(currentReview);
 },4000);
+
+/* ---------- SCROLL REVEAL OBSERVER ---------- */
+(function(){
+  const revealEls=document.querySelectorAll('.reveal, .reveal-scale');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('in-view'));
+  }
+})();
+
+/* ---------- NAV SCROLLED STATE ---------- */
+(function(){
+  const nav=document.querySelector('.nav');
+  const onScroll=()=>{
+    if(!nav) return;
+    if(window.scrollY>18){nav.classList.add('scrolled');}
+    else{nav.classList.remove('scrolled');}
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+
+/* ---------- STAT COUNT-UP ---------- */
+(function(){
+  const stats=document.querySelectorAll('.stat .n');
+  const animateStat=(el)=>{
+    const raw=el.textContent.trim();
+    const match=raw.match(/^([\d.]+)(.*)$/);
+    if(!match) return;
+    const target=parseFloat(match[1]);
+    const suffix=match[2];
+    let current=0;
+    const duration=1100;
+    const start=performance.now();
+    const isDecimal=raw.includes('.');
+    function tick(now){
+      const p=Math.min((now-start)/duration,1);
+      const eased=1-Math.pow(1-p,3);
+      current=target*eased;
+      el.textContent=(isDecimal?current.toFixed(1):Math.round(current))+suffix;
+      if(p<1) requestAnimationFrame(tick);
+      else el.textContent=raw;
+    }
+    requestAnimationFrame(tick);
+  };
+  if('IntersectionObserver' in window){
+    const statIo=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          animateStat(entry.target);
+          statIo.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.5});
+    stats.forEach(el=>statIo.observe(el));
+  }
+})();
 </script>
 </body></html>
